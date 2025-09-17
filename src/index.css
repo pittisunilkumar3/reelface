@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-reelblack-800 via-reelred-500 to-reelblack-900 bg-size-200 animate-gradient-flow;
+  }
+
+  .gradient-bg-subtle {
+    @apply bg-gradient-to-r from-reelblack-100 via-reelred-100 to-reelwhite-100;
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text;
+  }
+
+  .logo-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-reelred-500 via-reelblack-800 to-reelwhite-500;
+  }
+
+  .logo-gradient-vertical {
+    @apply text-transparent bg-clip-text bg-gradient-to-b from-reelred-500 via-reelblack-800 to-reelwhite-500;
+  }
+
+  .container-custom {
+    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-bold;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold;
+  }
+
+  .button-primary {
+    @apply bg-gradient-to-r from-reelred-500 to-reelblack-800 hover:from-reelred-600 hover:to-reelblack-900 text-white font-semibold py-3 px-6 rounded-md transition-all duration-200 inline-flex items-center justify-center shadow-md hover:shadow-lg transform hover:scale-105;
+  }
+
+  .button-secondary {
+    @apply bg-transparent border-2 border-reelred-500 text-reelred-500 hover:bg-gradient-to-r hover:from-reelred-500 hover:to-reelblack-800 hover:text-white hover:border-transparent font-semibold py-3 px-6 rounded-md transition-all duration-200 inline-flex items-center justify-center shadow-sm hover:shadow-md transform hover:scale-105;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Hexagon network animation */
+  .hexagon-network {
+    @apply relative;
+    animation: pulse 3s infinite alternate;
+  }
+
+  .hexagon-node {
+    @apply absolute rounded-full bg-gradient-to-r from-reelred-500 to-reelblack-800;
+    animation: glow 2s infinite alternate;
+  }
+
+  .hexagon-line {
+    @apply absolute bg-gradient-to-r from-reelred-500/30 to-reelblack-800/30;
+    height: 2px;
+    transform-origin: left center;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px 0 rgba(229, 62, 62, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 15px 5px rgba(229, 62, 62, 0.5);
+    }
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
