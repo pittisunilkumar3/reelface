@@ -148,28 +148,10 @@ const Hero = () => {
             className="relative"
           >
             <p className="text-lg mb-6 text-gray-700 max-w-lg">
-              ReelFace specializes in cutting-edge digital media and content creation, delivering professional video production and content management solutions that transform how businesses engage with their audiences.
+              I become the face of your brand—providing a dedicated, exclusive, and conversion-focused on-screen presence that helps your brand tell stories audiences remember and that drive results.
             </p>
           </FloatingElement>
 
-          {/* Feature badges */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {features.map((feature, index) => (
-              <FloatingElement
-                key={index}
-                delay={index * 0.1}
-                animationType="fade"
-                hoverEffect={true}
-              >
-                <div
-                  className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-gray-100 text-sm font-medium text-gray-800 transition-all duration-300"
-                >
-                  <span className="mr-2 text-reelred-500">{feature.icon}</span>
-                  {feature.text}
-                </div>
-              </FloatingElement>
-            ))}
-          </div>
 
           <div className="flex flex-wrap gap-4">
             <FloatingElement
@@ -199,30 +181,6 @@ const Hero = () => {
             </FloatingElement>
           </div>
 
-          {/* Tech stack icons */}
-          <div className="mt-8 mb-4">
-            <FloatingElement
-              animationType="slide-up"
-              delay={0.6}
-            >
-              <h3 className="text-sm font-semibold text-gray-500 mb-3">POWERED BY CUTTING-EDGE TECHNOLOGY</h3>
-            </FloatingElement>
-
-            <div className="flex flex-wrap gap-3">
-              {techIcons.map((tech, index) => (
-                <FloatingElement
-                  key={index}
-                  delay={0.7 + index * 0.1}
-                  animationType="fade"
-                  hoverEffect={true}
-                >
-                  <div className={`w-10 h-10 rounded-full ${tech.bgColor} flex items-center justify-center ${tech.color}`}>
-                    {tech.icon}
-                  </div>
-                </FloatingElement>
-              ))}
-            </div>
-          </div>
 
           {/* Animated Hexagon Network */}
           <div className="mt-8 lg:mt-12 relative h-[150px] w-full max-w-md">
@@ -238,51 +196,10 @@ const Hero = () => {
           >
             <div className="bg-gradient-to-br from-reelred-50 to-reelblack-50 backdrop-blur-sm rounded-3xl p-6 md:p-10 relative z-10 shadow-lg transform transition-all duration-500 hover:shadow-xl">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white shadow-xl">
-                <LazyImage
-                  src={getOptimizedImageUrl("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 1200, 85)}
-                  alt="AI development and machine learning"
-                  className="w-full h-full transition-transform duration-700 hover:scale-110"
-                  objectFit="object-cover"
-                  aspectRatio="aspect-[4/3]"
-                  srcSet={generateSrcSet("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")}
-                  sizes={getResponsiveSizes()}
-                  fallbackSrc="/placeholder-image.svg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-cyberdark/70 to-transparent flex items-end">
-                  <div className="p-6 text-white">
-                    <h3 className="font-bold text-xl">AI Development Platform</h3>
-                    <p className="opacity-90">Custom machine learning solutions for your business</p>
-                  </div>
-                </div>
+                
+                
               </div>
 
-              {/* Small preview images */}
-              <div className="grid grid-cols-3 gap-3 mt-4">
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <LazyImage
-                    src={getOptimizedImageUrl("https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 400, 85)}
-                    alt="AI analytics dashboard"
-                    className="w-full h-full object-cover"
-                    fallbackSrc="/placeholder-image.svg"
-                  />
-                </div>
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <LazyImage
-                    src={getOptimizedImageUrl("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 400, 85)}
-                    alt="Machine learning models"
-                    className="w-full h-full object-cover"
-                    fallbackSrc="/placeholder-image.svg"
-                  />
-                </div>
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <LazyImage
-                    src={getOptimizedImageUrl("https://images.unsplash.com/photo-1581092921461-7d65ca45393a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 400, 85)}
-                    alt="Data visualization"
-                    className="w-full h-full object-cover"
-                    fallbackSrc="/placeholder-image.svg"
-                  />
-                </div>
-              </div>
 
               {/* Animated decorative elements */}
               <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-reelred-200/30 blur-2xl animate-pulse-slow"></div>
