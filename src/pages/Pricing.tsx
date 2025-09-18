@@ -87,66 +87,66 @@ const Pricing = () => {
 
   const pricingPlans = [
     {
-      name: "Starter",
-      description: "Perfect for small businesses and startups",
-      monthlyPrice: 499,
-      annualPrice: 5388, // 10% discount
+      name: "Collaboration",
+      description: "Best for small bussiness looking to create impactful reels with expert guidance.",
+      monthlyPrice: 5999,
+      annualPrice: 65989, // ~10% discount
       features: [
-        "Up to 5 users",
-        "Basic AI analytics",
-        "Standard support",
-        "Cloud storage (100GB)",
-        "Weekly reports"
+        "1 Professional reel shoot",
+        "Script, shooting, and editing support",
+        "Collaboration posts on Instagram",
+        "Brand-aligned wardrobe & styling",
+        "Strategy call to refine your message",
+        "Timely delivery"
       ],
       notIncluded: [
-        "Advanced AI features",
-        "Custom integrations",
-        "Dedicated account manager",
-        "24/7 priority support"
+        "Multiple reels per cycle",
+        "Monthly insights report",
+        "Podcast or interview production",
+        "Website or portfolio design",
+        "Influencer collaborations"
       ],
       cta: "Get Started",
       popular: false,
       color: "from-reelred/70 to-reelred/20"
     },
     {
-      name: "Professional",
-      description: "Ideal for growing businesses and teams",
-      monthlyPrice: 999,
-      annualPrice: 10788, // 10% discount
+      name: "Partnership",
+      description: "Perfect for brands and professionals seeking consistent reel-based content.",
+      monthlyPrice: 49999,
+      annualPrice: 549989, // ~10% discount
       features: [
-        "Up to 20 users",
-        "Advanced AI analytics",
-        "Priority support",
-        "Cloud storage (500GB)",
-        "Daily reports",
-        "Custom integrations",
-        "API access"
+        "5 Exclusive reels",
+        "Script planning & content strategy call",
+        "Professional shoot, edit, captions & hashtags",
+        "Brand-aligned wardrobe & styling",
+        "Monthly insights report + tips for next cycle",
+        "Timely delivery"
       ],
       notIncluded: [
-        "Dedicated account manager",
-        "24/7 priority support",
-        "Custom AI model training"
+        "Cinematic trailer production",
+        "Speaking session opportunities",
+        "Website or portfolio design",
+        "Micro-influencer collaborations"
       ],
       cta: "Get Started",
       popular: true,
       color: "from-reelblack/70 to-reelblack/20"
     },
     {
-      name: "Enterprise",
-      description: "For large organizations with complex needs",
-      monthlyPrice: 2499,
-      annualPrice: 26988, // 10% discount
+      name: "Personal Branding Services",
+      description: "Comprehensive package for professionals to establish and grow their personal brand.",
+      monthlyPrice: 99999,
+      annualPrice: 1099899, // ~10% discount
       features: [
-        "Unlimited users",
-        "Full AI feature suite",
-        "24/7 priority support",
-        "Cloud storage (2TB)",
-        "Real-time analytics",
-        "Custom integrations",
-        "API access",
-        "Dedicated account manager",
-        "Custom AI model training",
-        "On-premise deployment option"
+        "Cinematic trailer introducing your expertise",
+        "8 short reels tailored to your niche",
+        "4 professional photoshoot edits",
+        "Interview or podcast shoot",
+        "2–3 instant reels cut from long videos",
+        "Speaking session opportunities (events/workshops)",
+        "Personal website or portfolio design",
+        "2–3 micro-influencer collaborations to boost reach"
       ],
       notIncluded: [],
       cta: "Contact Sales",
@@ -155,32 +155,7 @@ const Pricing = () => {
     }
   ];
 
-  const faqs = [
-    {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards, PayPal, and bank transfers for annual plans. For enterprise customers, we also offer invoicing options."
-    },
-    {
-      question: "Can I upgrade or downgrade my plan later?",
-      answer: "Yes, you can upgrade your plan at any time. Downgrades will take effect at the end of your current billing cycle."
-    },
-    {
-      question: "Is there a free trial available?",
-      answer: "Yes, we offer a 14-day free trial for our Starter and Professional plans. No credit card required."
-    },
-    {
-      question: "What kind of support is included?",
-      answer: "All plans include email support. Professional plans include priority support during business hours, while Enterprise plans include 24/7 priority support."
-    },
-    {
-      question: "Do you offer custom pricing for specific needs?",
-      answer: "Yes, we offer custom pricing for organizations with specific requirements. Please contact our sales team to discuss your needs."
-    },
-    {
-      question: "Is there a setup fee?",
-      answer: "No, there are no setup fees for any of our plans."
-    }
-  ];
+
 
   return (
     <div className="min-h-screen">
@@ -224,22 +199,6 @@ const Pricing = () => {
                 Choose the plan that fits your needs. All plans include core features with different limits and capabilities to support your business growth.
               </p>
 
-              {/* Feature badges */}
-              <div className="flex flex-wrap gap-3 mb-8 justify-center">
-                {[
-                  { icon: <CreditCard className="h-4 w-4" />, text: "No Credit Card Required" },
-                  { icon: <Clock className="h-4 w-4" />, text: "14-Day Free Trial" },
-                  { icon: <Shield className="h-4 w-4" />, text: "Cancel Anytime" }
-                ].map((badge, index) => (
-                  <div
-                    key={index}
-                    className="inline-flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium transform transition-all duration-300 hover:scale-105 hover:bg-white/20"
-                  >
-                    <span className="mr-1.5 text-white">{badge.icon}</span>
-                    {badge.text}
-                  </div>
-                ))}
-              </div>
 
               <div className="flex justify-center">
                 <Link
@@ -256,7 +215,7 @@ const Pricing = () => {
           {/* Pricing highlights */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             {[
-              { icon: <Users className="h-6 w-6" />, title: "5,000+", subtitle: "Happy Customers" },
+              { icon: <Users className="h-6 w-6" />, title: "50+", subtitle: "Happy Customers" },
               { icon: <Star className="h-6 w-6" />, title: "4.9/5", subtitle: "Customer Rating" },
               { icon: <Award className="h-6 w-6" />, title: "99.9%", subtitle: "Uptime Guarantee" },
               { icon: <Zap className="h-6 w-6" />, title: "24/7", subtitle: "Customer Support" }
@@ -326,12 +285,12 @@ const Pricing = () => {
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <p className="opacity-90 mb-4">{plan.description}</p>
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-bold">${billingCycle === 'monthly' ? plan.monthlyPrice : Math.round(plan.annualPrice / 12)}</span>
+                    <span className="text-4xl font-bold">₹{billingCycle === 'monthly' ? plan.monthlyPrice : Math.round(plan.annualPrice / 12)}</span>
                     <span className="ml-2 opacity-80">/month</span>
                   </div>
                   {billingCycle === 'annual' && (
                     <p className="text-sm mt-1 opacity-80">
-                      ${plan.annualPrice} billed annually
+                      ₹{plan.annualPrice} billed annually
                     </p>
                   )}
                 </div>
@@ -375,24 +334,6 @@ const Pricing = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs Section */}
-      <section className="section">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="heading-lg text-center mb-12">Frequently Asked Questions</h2>
-
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
