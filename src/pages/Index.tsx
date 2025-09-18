@@ -162,26 +162,43 @@ const Index = () => {
   // For FAQ section
   const faqs = [
     {
-      question: "What types of AI solutions do you develop?",
-      answer: "We develop a wide range of AI solutions including machine learning models, natural language processing systems, computer vision applications, predictive analytics tools, and recommendation engines. Our solutions are customized to address specific business challenges and opportunities."
+      question: "What is ReelFace?",
+      answer: "ReelFace is a specialised service where I become the exclusive face of your brand’s reels — creating authentic, engaging video content to grow your reach and awareness."
     },
     {
-      question: "How long does it typically take to develop an AI solution?",
-      answer: "The development timeline varies depending on the complexity of the solution, the availability of data, and specific requirements. Simple projects might take 4-8 weeks, while more complex enterprise solutions can take 3-6 months. We provide detailed timelines during our initial consultation."
+      question: "How is ReelFace different from influencers?",
+      answer: "Most influencers promote dozens of brands at once, which kills exclusivity. ReelFace works with select clients and offers clear packages, so your message stays unique and consistent."
     },
     {
-      question: "Do you provide ongoing support after deployment?",
-      answer: "Yes, we offer comprehensive support and maintenance services to ensure your AI solution continues to perform optimally. This includes monitoring, performance optimization, model retraining, and technical support to address any issues that may arise."
+      question: "Who can use ReelFace?",
+      answer: "Startups & small businesses, cafés, salons, gyms, wellness brands, fashion, beauty, lifestyle, F&B, gadgets, and founders & professionals who want personal branding."
     },
     {
-      question: "What data requirements are needed for AI development?",
-      answer: "Effective AI solutions typically require quality data for training and validation. The specific requirements depend on your project, but we can work with various data formats and volumes. If you have limited data, we can discuss strategies such as synthetic data generation or transfer learning."
+      question: "Do you offer exclusivity for my brand?",
+      answer: "Yes. Depending on the plan, we sign an agreement for brand exclusivity within your category (e.g., one café, one salon in a city)."
     },
     {
-      question: "How do you ensure the security and privacy of our data?",
-      answer: "We implement robust security measures throughout the development process, including data encryption, secure access controls, and compliance with relevant regulations like GDPR and HIPAA. We can also sign NDAs and establish clear data handling protocols tailored to your requirements."
+      question: "How long does it take to deliver a reel?",
+      answer: "Usually 1–2 working days after receiving your product/brief. (Rush delivery available at extra cost.)"
+    },
+    {
+      question: "Can you post on your Instagram page too?",
+      answer: "Absolutely! Collaboration on my Instagram page is part of every package — boosting your visibility."
+    },
+    {
+      question: "Do you provide strategy or only videos?",
+      answer: "All plans include basic guidance on scripting, hooks, and posting. Gold and Personal Branding packages come with strategy calls & audience insights."
+    },
+    {
+      question: "What if I need ongoing content every month?",
+      answer: "You can subscribe to a monthly retainer (custom pricing) or upgrade to a bigger package anytime."
+    },
+    {
+      question: "How do I book your service?",
+      answer: "DM on Instagram, fill out the website form, or WhatsApp me. We’ll set up a discovery call, finalise the package, sign an agreement, and start creating!"
     }
   ];
+
 
   // For team highlights section
   const teamHighlights = [
