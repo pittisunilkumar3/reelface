@@ -899,10 +899,10 @@ const About = () => {
                   hoverEffect={true}
                 >
                   <Link
-                    to="/careers"
+                    to="/community"
                     className="inline-flex items-center bg-gradient-to-r from-cyberpink to-cyberpurple text-white font-semibold py-3 px-6 rounded-md transition-all duration-300"
                   >
-                    View Open Positions
+                    Join Our Community
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </FloatingElement>

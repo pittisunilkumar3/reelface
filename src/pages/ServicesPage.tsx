@@ -1,9 +1,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import {
-  ArrowRight, CheckCircle, ChevronDown, Zap, Shield, Database,
-  BarChart, Brain, Code, Server, Cpu, Users, Globe, Layers,
-  Cloud, Lock, LineChart, Sparkles
+  ArrowRight, CheckCircle, ChevronDown, Zap, Shield,
+  Globe, Layers, Sparkles, Camera, Film, Mic,
+  User, Scissors, FileText, Star, Video
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
@@ -75,159 +75,94 @@ const FloatingElement = ({ children, delay = 0, className = "" }) => {
 const ServicesPage = () => {
   const services = [
     {
-      id: "ai-development",
-      title: "Custom AI Development",
-      description: "Tailored artificial intelligence solutions designed specifically for your business needs.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000",
+      id: "brand-face-reels",
+      title: "Exclusive Brand Face for Reels",
+      description: "Stand out on social media with a unique brand face designed exclusively for your reels, creating authentic connections with your audience.",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Personalized AI strategy and roadmap",
-        "Custom algorithm development",
-        "Business process automation",
-        "Intelligent data processing solutions",
-        "Continuous improvement and optimization"
+        "Custom brand personality development",
+        "Exclusive talent casting and selection",
+        "Brand voice and messaging alignment",
+        "Social media optimization strategies",
+        "Consistent visual identity across platforms"
       ]
     },
     {
-      id: "machine-learning",
-      title: "Machine Learning Implementation",
-      description: "Advanced machine learning models to extract insights and improve decision-making.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1000",
+      id: "professional-reel-shoots",
+      title: "Professional Reel Shoots",
+      description: "High-quality reel production tailored to enhance your online presence and engagement with professional cinematography.",
+      image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Predictive analytics models",
-        "Pattern recognition systems",
-        "Recommendation engines",
-        "Anomaly detection solutions",
-        "Model training and validation"
+        "Professional video production equipment",
+        "Creative direction and storytelling",
+        "Multiple format optimization (Instagram, TikTok, YouTube)",
+        "On-location and studio shooting options",
+        "Post-production editing and color grading"
       ]
     },
     {
-      id: "cloud-services",
-      title: "Cloud Computing Solutions",
-      description: "Scalable and secure cloud infrastructure to power your digital transformation.",
-      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000",
+      id: "script-content-strategy",
+      title: "Script Planning & Content Strategy",
+      description: "Comprehensive script writing and content strategy development to align with your brand goals and audience engagement.",
+      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Cloud migration strategy",
-        "Multi-cloud architecture design",
-        "Serverless application development",
-        "Cloud cost optimization",
-        "24/7 cloud infrastructure monitoring"
+        "Strategic content planning and calendar",
+        "Engaging script writing and storytelling",
+        "Audience research and targeting",
+        "Brand messaging consistency",
+        "Performance tracking and optimization"
       ]
     },
     {
-      id: "cybersecurity",
-      title: "Cybersecurity Services",
-      description: "Comprehensive security solutions to protect your digital assets and sensitive data.",
-      image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1000",
+      id: "photoshoots-video-trailers",
+      title: "Professional Photoshoots & Video Trailers",
+      description: "Creative photoshoots and cinematic video trailers to highlight your brand, products, and services with stunning visuals.",
+      image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Security vulnerability assessment",
-        "Penetration testing",
-        "Security architecture design",
-        "Incident response planning",
-        "Security awareness training"
+        "Professional photography and cinematography",
+        "Creative concept development",
+        "Product and lifestyle photography",
+        "Cinematic trailer production",
+        "Brand storytelling through visuals"
       ]
     },
     {
-      id: "data-analytics",
-      title: "Data Analytics & Insights",
-      description: "Transform your raw data into actionable business intelligence.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+      id: "podcast-interview-production",
+      title: "Podcast & Interview Production",
+      description: "Full-service podcast and interview production to share your voice and expertise with the world through professional audio-visual content.",
+      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Data extraction and cleansing",
-        "Advanced analytics dashboards",
-        "Business intelligence reporting",
-        "Trend analysis and forecasting",
-        "Custom data visualization"
+        "Professional audio recording and mixing",
+        "Video podcast production",
+        "Interview preparation and coaching",
+        "Multi-platform distribution strategy",
+        "Show notes and content repurposing"
       ]
     },
     {
-      id: "web-development",
-      title: "Web Application Development",
-      description: "Custom web applications that deliver exceptional user experiences and business value.",
-      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=1000",
+      id: "personal-branding",
+      title: "Personal Branding for Professionals",
+      description: "Tailored personal branding strategies to help professionals build a strong online identity and establish thought leadership.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Responsive web design",
-        "Progressive web applications (PWAs)",
-        "E-commerce solutions",
-        "Content management systems",
-        "API development and integration"
+        "Personal brand strategy development",
+        "Professional headshots and portraits",
+        "LinkedIn and social media optimization",
+        "Thought leadership content creation",
+        "Online reputation management"
       ]
     },
     {
-      id: "mobile-development",
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android devices.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1000",
+      id: "professional-editing",
+      title: "Professional Editing Services",
+      description: "Expert editing for videos, photos, and audio content to deliver polished and professional results that captivate your audience.",
+      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1000",
       features: [
-        "Native iOS and Android development",
-        "Cross-platform solutions (React Native, Flutter)",
-        "Mobile UI/UX design",
-        "App store optimization",
-        "Mobile app maintenance and support"
-      ]
-    },
-    {
-      id: "ai-integration",
-      title: "AI Integration Services",
-      description: "Seamlessly integrate AI capabilities with your existing systems and workflows.",
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Legacy system integration",
-        "API development and management",
-        "Workflow automation",
-        "Cross-platform compatibility",
-        "Technical support and maintenance"
-      ]
-    },
-    {
-      id: "devops",
-      title: "DevOps & CI/CD",
-      description: "Streamline your development process with automated workflows and continuous integration.",
-      image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "CI/CD pipeline implementation",
-        "Infrastructure as Code (IaC)",
-        "Container orchestration (Kubernetes)",
-        "Microservices architecture",
-        "Performance monitoring and optimization"
-      ]
-    },
-    {
-      id: "data-management",
-      title: "Data Management",
-      description: "Comprehensive data architecture and management solutions to support your IT initiatives.",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Data architecture design",
-        "Database optimization",
-        "Data governance frameworks",
-        "Data quality management",
-        "Scalable storage solutions"
-      ]
-    },
-    {
-      id: "it-consulting",
-      title: "IT Strategy & Consulting",
-      description: "Expert guidance to align your technology investments with your business objectives.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "IT roadmap development",
-        "Technology stack assessment",
-        "Digital transformation strategy",
-        "IT cost optimization",
-        "Vendor selection and management"
-      ]
-    },
-    {
-      id: "ai-security",
-      title: "AI Security & Compliance",
-      description: "Ensure your AI implementations meet the highest standards of security and regulatory compliance.",
-      image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Security risk assessment",
-        "Privacy protection measures",
-        "Regulatory compliance frameworks",
-        "Ethical AI implementation",
-        "Ongoing security monitoring"
+        "Advanced video editing and post-production",
+        "Color correction and grading",
+        "Audio mixing and sound design",
+        "Motion graphics and visual effects",
+        "Multi-format delivery optimization"
       ]
     }
   ];
@@ -235,8 +170,8 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Our Services - ReelFace"
-        description="We offer a comprehensive range of video production solutions to help businesses create compelling content and gain competitive advantage."
+        title="Our Services - Professional Video Production & Content Creation"
+        description="Comprehensive video production and content creation services including brand face for reels, professional shoots, content strategy, and personal branding."
       />
       {/* Services Hero Section */}
       <section className="bg-gradient-to-r from-reelred to-reelblack text-white py-20 md:py-28 relative overflow-hidden">
@@ -276,10 +211,10 @@ const ServicesPage = () => {
               {/* Service category badges */}
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: <Brain className="h-4 w-4" />, text: "AI & ML" },
-                  { icon: <Cloud className="h-4 w-4" />, text: "Cloud Computing" },
-                  { icon: <Lock className="h-4 w-4" />, text: "Cybersecurity" },
-                  { icon: <LineChart className="h-4 w-4" />, text: "Data Analytics" }
+                  { icon: <Sparkles className="h-4 w-4" />, text: "Brand Face" },
+                  { icon: <Globe className="h-4 w-4" />, text: "Content Creation" },
+                  { icon: <Shield className="h-4 w-4" />, text: "Professional Quality" },
+                  { icon: <Zap className="h-4 w-4" />, text: "Fast Delivery" }
                 ].map((badge, index) => (
                   <div
                     key={index}
@@ -311,8 +246,8 @@ const ServicesPage = () => {
               {/* Service stats */}
               <div className="grid grid-cols-3 gap-4 mt-12">
                 {[
-                  { value: 12, label: "Service Categories", icon: <Layers className="h-5 w-5" /> },
-                  { value: 50, label: "Specialized Solutions", icon: <Zap className="h-5 w-5" /> },
+                  { value: 7, label: "Service Categories", icon: <Layers className="h-5 w-5" /> },
+                  { value: 50, label: "Projects Completed", icon: <Sparkles className="h-5 w-5" /> },
                   { value: 10, label: "Industries Served", icon: <Globe className="h-5 w-5" /> }
                 ].map((stat, index) => (
                   <div
@@ -342,15 +277,15 @@ const ServicesPage = () => {
                   <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 relative z-10 shadow-xl border border-white/10">
                     <div className="grid grid-cols-3 gap-4">
                       {[
-                        { icon: <Brain className="h-8 w-8" />, label: "Video", color: "bg-reelred/20" },
-                        { icon: <Cloud className="h-8 w-8" />, label: "Cloud", color: "bg-reelblack/20" },
-                        { icon: <Lock className="h-8 w-8" />, label: "Security", color: "bg-reelgray-600/20" },
-                        { icon: <Code className="h-8 w-8" />, label: "Edit", color: "bg-reelblack/20" },
-                        { icon: <Database className="h-8 w-8" />, label: "Media", color: "bg-reelred/20" },
-                        { icon: <Server className="h-8 w-8" />, label: "Stream", color: "bg-reelgray-600/20" },
-                        { icon: <LineChart className="h-8 w-8" />, label: "Analytics", color: "bg-reelred/20" },
-                        { icon: <Cpu className="h-8 w-8" />, label: "AI", color: "bg-reelblack/20" },
-                        { icon: <Globe className="h-8 w-8" />, label: "Web", color: "bg-reelgray-600/20" }
+                        { icon: <Star className="h-8 w-8" />, label: "Brand Face", color: "bg-reelred/20" },
+                        { icon: <Camera className="h-8 w-8" />, label: "Shoots", color: "bg-reelblack/20" },
+                        { icon: <FileText className="h-8 w-8" />, label: "Scripts", color: "bg-reelgray-600/20" },
+                        { icon: <Film className="h-8 w-8" />, label: "Videos", color: "bg-reelblack/20" },
+                        { icon: <Mic className="h-8 w-8" />, label: "Podcasts", color: "bg-reelred/20" },
+                        { icon: <User className="h-8 w-8" />, label: "Branding", color: "bg-reelgray-600/20" },
+                        { icon: <Scissors className="h-8 w-8" />, label: "Editing", color: "bg-reelred/20" },
+                        { icon: <Video className="h-8 w-8" />, label: "Production", color: "bg-reelblack/20" },
+                        { icon: <Globe className="h-8 w-8" />, label: "Digital", color: "bg-reelgray-600/20" }
                       ].map((item, index) => (
                         <div
                           key={index}
@@ -366,22 +301,22 @@ const ServicesPage = () => {
                     {/* Service highlight */}
                     <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center">
                       <div className="bg-reelred/20 p-3 rounded-full mr-4">
-                        <Zap className="h-6 w-6 text-white" />
+                        <Sparkles className="h-6 w-6 text-white" />
                       </div>
                       <div>
                         <h3 className="font-bold text-white text-lg">End-to-End Solutions</h3>
-                        <p className="text-white/80 text-sm">From strategy to implementation and support</p>
+                        <p className="text-white/80 text-sm">From concept to delivery and beyond</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Floating elements */}
                   <FloatingElement delay={0.7} className="absolute -top-4 -left-4 bg-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-20">
-                    <Brain className="h-6 w-6 text-reelred" />
+                    <Camera className="h-6 w-6 text-reelred" />
                   </FloatingElement>
 
                   <FloatingElement delay={1.5} className="absolute -bottom-4 -right-4 bg-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center z-20">
-                    <Shield className="h-5 w-5 text-reelblack" />
+                    <Film className="h-5 w-5 text-reelblack" />
                   </FloatingElement>
                 </div>
               </FloatingElement>
@@ -400,9 +335,9 @@ const ServicesPage = () => {
       <section id="services-list" className="section">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-lg mb-4">How We Can Help</h2>
+            <h2 className="heading-lg mb-4">Our Video Production Services</h2>
             <p className="text-gray-600 text-lg">
-              From custom development to integration and security, we provide end-to-end AI services tailored to your needs.
+              From exclusive brand faces for reels to comprehensive content strategies, we provide end-to-end video production solutions tailored to your brand's unique needs.
             </p>
           </div>
 

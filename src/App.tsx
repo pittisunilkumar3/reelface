@@ -15,7 +15,7 @@ import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import Careers from "./pages/Careers";
+import Community from "./pages/Community";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -42,7 +42,7 @@ const App = () => (
                   <Route path="/pricing" element={<Pricing />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:id" element={<BlogPost />} />
-                  <Route path="/careers" element={<Careers />} />
+                  <Route path="/community" element={<Community />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-of-service" element={<TermsOfService />} />

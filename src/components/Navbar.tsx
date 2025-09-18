@@ -18,8 +18,8 @@ const Navbar = () => {
     { name: 'Services', path: '/services' },
     // { name: 'Solutions', path: '/product' },
     { name: 'Pricing', path: '/pricing' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Careers', path: '/careers' },
+    // { name: 'Blog', path: '/blog' },
+    { name: 'Community', path: '/community' },
     { name: 'Contact', path: '/contact' },
   ];
 
