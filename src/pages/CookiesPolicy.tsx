@@ -79,7 +79,7 @@ const CookiesPolicy = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Cookies Policy - Cyberdetox"
+        title="Cookies Policy - ReelFace"
         description="Our cookies policy explains how we use cookies and similar technologies on our website."
       />
 
@@ -179,7 +179,7 @@ const CookiesPolicy = () => {
                     </div>
                   </div>
                   <p className="text-gray-900 text-lg leading-relaxed font-medium">
-                    This document explains how Cyberdetox uses cookies and similar technologies to recognize you when you visit our website.
+                    This document explains how ReelFace uses cookies and similar technologies to recognize you when you visit our website.
                     It explains what these technologies are and why we use them, as well as your rights to control our use of them.
                   </p>
                 </div>
@@ -200,7 +200,7 @@ const CookiesPolicy = () => {
                         Cookies are small pieces of text sent by your web browser by a website you visit. A cookie file is stored in your web browser and allows the website or a third-party to recognize you and make your next visit easier and the website more useful to you.
                       </p>
                       <p className="text-gray-900 leading-relaxed mb-4 font-medium">
-                        Essentially, cookies are a user's identification card for the Cyberdetox servers. Cookies allow Cyberdetox to serve you better and more efficiently, and to personalize your experience on our site.
+                        Essentially, cookies are a user's identification card for the ReelFace servers. Cookies allow ReelFace to serve you better and more efficiently, and to personalize your experience on our site.
                       </p>
 
                       <div className="bg-gradient-to-r from-cyberpink/5 to-cyberpurple/5 p-4 rounded-lg mb-4">
@@ -316,7 +316,7 @@ const CookiesPolicy = () => {
                   <div id="how-we-use" className="pt-4">
                     <h3 className="text-lg font-semibold text-cyberpink mb-3">Our Cookie Usage Practices</h3>
                     <p className="mb-4 text-gray-800 leading-relaxed">
-                      At Cyberdetox, we use cookies to enhance your browsing experience, analyze site traffic, and personalize content. This section explains how and why we use cookies on our website.
+                      At ReelFace, we use cookies to enhance your browsing experience, analyze site traffic, and personalize content. This section explains how and why we use cookies on our website.
                     </p>
 
                     <div className="bg-white shadow-sm rounded-lg p-5 border border-gray-100 mb-6">
@@ -603,7 +603,7 @@ const CookiesPolicy = () => {
                     <div className="bg-gray-50 p-6 rounded-lg">
                       <div className="flex flex-col md:flex-row md:items-center mb-3">
                         <span className="font-semibold w-24">Email:</span>
-                        <a href="mailto:privacy@cyberdetox.com" className="text-cyberpink hover:underline">privacy@cyberdetox.com</a>
+                        <a href="mailto:privacy@ReelFace.com" className="text-cyberpink hover:underline">privacy@ReelFace.com</a>
                       </div>
                       <div className="flex flex-col md:flex-row md:items-center mb-3">
                         <span className="font-semibold w-24">Phone:</span>

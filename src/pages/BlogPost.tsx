@@ -159,7 +159,7 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title={`${post.title} - Cyberdetox Blog`}
+        title={`${post.title} - ReelFace Blog`}
         description={post.excerpt}
       />
 

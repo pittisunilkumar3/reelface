@@ -81,7 +81,7 @@ const TermsOfService = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Terms of Service - Cyberdetox"
+        title="Terms of Service - ReelFace"
         description="Our terms of service outline the rules and guidelines for using our website and services."
       />
 
@@ -181,7 +181,7 @@ const TermsOfService = () => {
                     </div>
                   </div>
                   <p className="text-gray-900 text-lg leading-relaxed font-medium">
-                    This document outlines the rules and guidelines for using the Cyberdetox website and services.
+                    This document outlines the rules and guidelines for using the ReelFace website and services.
                     By accessing our website, you agree to be bound by these terms.
                   </p>
                 </div>
@@ -193,13 +193,13 @@ const TermsOfService = () => {
                   <div id="agreement" className="pt-4">
                     <h3 className="text-lg font-semibold text-cyberpink mb-3">Binding Legal Agreement</h3>
                     <p className="mb-4 text-gray-800 leading-relaxed">
-                      Welcome to Cyberdetox. These Terms of Service ("Terms") govern your access to and use of the Cyberdetox website, applications, and services (collectively, the "Services"). Please read these Terms carefully.
+                      Welcome to ReelFace. These Terms of Service ("Terms") govern your access to and use of the ReelFace website, applications, and services (collectively, the "Services"). Please read these Terms carefully.
                     </p>
 
                     <div className="bg-white shadow-sm rounded-lg p-5 border border-gray-100 mb-6">
                       <h4 className="font-semibold text-cyberpink mb-3">Legal Agreement</h4>
                       <p className="text-gray-700 leading-relaxed mb-4">
-                        These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and <span className="font-semibold">Cyberdetox, Inc.</span> ("Company", "we", "us", or "our"), concerning your access to and use of our website and services.
+                        These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and <span className="font-semibold">ReelFace, Inc.</span> ("Company", "we", "us", or "our"), concerning your access to and use of our website and services.
                       </p>
                       <p className="text-gray-700 leading-relaxed mb-4">
                         By accessing or using our Services, you agree to be bound by these Terms and by our Privacy Policy, which is incorporated herein by reference. If you do not agree with any part of these Terms, you may not access or use our Services.
@@ -255,16 +255,16 @@ const TermsOfService = () => {
                   <div id="intellectual-property" className="pt-4">
                     <h3 className="text-lg font-semibold text-cyberpink mb-3">Ownership of Content and Materials</h3>
                     <p className="mb-4 text-gray-800 leading-relaxed">
-                      Cyberdetox values intellectual property rights and is committed to protecting them. This section outlines our ownership rights and your permitted use of our content and materials.
+                      ReelFace values intellectual property rights and is committed to protecting them. This section outlines our ownership rights and your permitted use of our content and materials.
                     </p>
 
                     <div className="bg-white shadow-sm rounded-lg p-5 border border-gray-100 mb-6">
                       <h4 className="font-semibold text-cyberpink mb-3">Our Proprietary Rights</h4>
                       <p className="text-gray-700 leading-relaxed mb-4">
-                        Unless otherwise indicated, the Cyberdetox website, including all of its content and features, is owned and controlled by Cyberdetox, Inc. or its licensors. All rights not expressly granted herein are reserved.
+                        Unless otherwise indicated, the ReelFace website, including all of its content and features, is owned and controlled by ReelFace, Inc. or its licensors. All rights not expressly granted herein are reserved.
                       </p>
                       <p className="text-gray-700 leading-relaxed mb-4">
-                        The website, its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by Cyberdetox, Inc., its licensors, or other providers of such material and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                        The website, its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by ReelFace, Inc., its licensors, or other providers of such material and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
                       </p>
 
                       <div className="bg-gradient-to-r from-cyberpink/5 to-cyberpurple/5 p-4 rounded-lg mb-4">
@@ -331,12 +331,12 @@ const TermsOfService = () => {
                     <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 mb-4">
                       <h4 className="font-semibold text-yellow-700 mb-2">Important Notice</h4>
                       <p className="text-yellow-800 text-sm leading-relaxed">
-                        The Content and Marks are provided on the website "AS IS" for your information and personal use only. Any use of the Content or Marks other than as specifically authorized herein, without the prior written permission of Cyberdetox, is strictly prohibited and will terminate the license granted herein.
+                        The Content and Marks are provided on the website "AS IS" for your information and personal use only. Any use of the Content or Marks other than as specifically authorized herein, without the prior written permission of ReelFace, is strictly prohibited and will terminate the license granted herein.
                       </p>
                     </div>
 
                     <p className="text-sm text-gray-600 italic">
-                      If you wish to use any of our content or materials for commercial purposes, please contact us at <a href="mailto:legal@cyberdetox.com" className="text-cyberpink hover:underline">legal@cyberdetox.com</a> to request permission.
+                      If you wish to use any of our content or materials for commercial purposes, please contact us at <a href="mailto:legal@ReelFace.com" className="text-cyberpink hover:underline">legal@ReelFace.com</a> to request permission.
                     </p>
                   </div>
                 </PolicySection>
@@ -445,7 +445,7 @@ const TermsOfService = () => {
                     <div className="bg-gray-50 p-6 rounded-lg">
                       <div className="flex flex-col md:flex-row md:items-center mb-3">
                         <span className="font-semibold w-24">Email:</span>
-                        <a href="mailto:legal@cyberdetox.com" className="text-cyberpink hover:underline">legal@cyberdetox.com</a>
+                        <a href="mailto:legal@ReelFace.com" className="text-cyberpink hover:underline">legal@ReelFace.com</a>
                       </div>
                       <div className="flex flex-col md:flex-row md:items-center mb-3">
                         <span className="font-semibold w-24">Phone:</span>

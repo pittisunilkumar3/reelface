@@ -48,7 +48,7 @@ const ProductShowcase = () => {
                   className="w-full h-auto rounded-t-lg"
                 />
                 <div className="p-6">
-                  <h3 className="font-bold text-xl mb-2">Cyberdetox Dashboard</h3>
+                  <h3 className="font-bold text-xl mb-2">ReelFace Dashboard</h3>
                   <p className="text-gray-600">Monitor and manage your digital wellness and security</p>
                 </div>
               </div>

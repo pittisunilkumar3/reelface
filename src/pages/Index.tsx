@@ -230,8 +230,8 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       
       <SEO
-        title="Cyberdetox - Advanced AI Development Solutions"
-        description="Cyberdetox specializes in cutting-edge AI development, creating intelligent solutions that transform how businesses operate while ensuring digital wellness and security."
+        title="ReelFace - Advanced AI Development Solutions"
+        description="ReelFace specializes in cutting-edge AI development, creating intelligent solutions that transform how businesses operate while ensuring digital wellness and security."
       />
       <Hero />
 

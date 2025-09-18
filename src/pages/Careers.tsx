@@ -268,7 +268,7 @@ const Careers = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Careers - Cyberdetox"
+        title="Careers - ReelFace"
         description="Join our team of innovators and help shape the future of AI and technology. Explore current job openings and benefits."
       />
 
@@ -454,7 +454,7 @@ const Careers = () => {
             <div>
               <h2 className="heading-lg mb-6">Our Culture</h2>
               <p className="text-gray-700 mb-4">
-                At Cyberdetox, we believe that great products are built by great teams. We foster a culture of innovation, collaboration, and continuous learning where everyone's voice is heard and valued.
+                At ReelFace, we believe that great products are built by great teams. We foster a culture of innovation, collaboration, and continuous learning where everyone's voice is heard and valued.
               </p>
               <p className="text-gray-700 mb-4">
                 We're committed to creating an inclusive environment where diverse perspectives are celebrated and where everyone has the opportunity to grow both personally and professionally.

@@ -16,7 +16,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <SEO
-        title="Page Not Found - Cyberdetox"
+        title="Page Not Found - ReelFace"
         description="The page you are looking for does not exist."
       />
       <div className="text-center bg-white p-10 rounded-xl shadow-md max-w-md w-full">

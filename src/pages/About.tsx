@@ -73,12 +73,12 @@ const About = () => {
       name: "David Chen",
       title: "CEO & Founder",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=500",
-      bio: "Former AI research lead with 15+ years of experience in enterprise AI solutions. David founded Cyberdetox with a vision to make AI accessible to businesses of all sizes.",
+      bio: "Former AI research lead with 15+ years of experience in enterprise AI solutions. David founded ReelFace with a vision to make AI accessible to businesses of all sizes.",
       expertise: ["AI Strategy", "Business Development", "Enterprise Solutions"],
       location: "San Francisco, CA",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
-      email: "david@cyberdetox.ai"
+      email: "david@ReelFace.ai"
     },
     {
       name: "Sarah Johnson",
@@ -88,7 +88,7 @@ const About = () => {
       expertise: ["Machine Learning", "NLP", "Computer Vision"],
       location: "Boston, MA",
       linkedin: "https://linkedin.com",
-      email: "sarah@cyberdetox.ai"
+      email: "sarah@ReelFace.ai"
     },
     {
       name: "Michael Rodriguez",
@@ -99,7 +99,7 @@ const About = () => {
       location: "Austin, TX",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
-      email: "michael@cyberdetox.ai"
+      email: "michael@ReelFace.ai"
     },
     {
       name: "Priya Patel",
@@ -109,7 +109,7 @@ const About = () => {
       expertise: ["Predictive Analytics", "Deep Learning", "Data Visualization"],
       location: "Seattle, WA",
       linkedin: "https://linkedin.com",
-      email: "priya@cyberdetox.ai"
+      email: "priya@ReelFace.ai"
     },
     {
       name: "James Wilson",
@@ -119,7 +119,7 @@ const About = () => {
       expertise: ["Cloud Architecture", "DevOps", "System Design"],
       location: "Chicago, IL",
       linkedin: "https://linkedin.com",
-      email: "james@cyberdetox.ai"
+      email: "james@ReelFace.ai"
     },
     {
       name: "Elena Gonzalez",
@@ -130,7 +130,7 @@ const About = () => {
       location: "Washington, DC",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
-      email: "elena@cyberdetox.ai"
+      email: "elena@ReelFace.ai"
     },
     {
       name: "Robert Kim",
@@ -140,7 +140,7 @@ const About = () => {
       expertise: ["Business Strategy", "Partnerships", "Go-to-Market"],
       location: "New York, NY",
       linkedin: "https://linkedin.com",
-      email: "robert@cyberdetox.ai"
+      email: "robert@ReelFace.ai"
     },
     {
       name: "Aisha Rahman",
@@ -150,7 +150,7 @@ const About = () => {
       expertise: ["Customer Experience", "Solution Implementation", "Training"],
       location: "Toronto, Canada",
       linkedin: "https://linkedin.com",
-      email: "aisha@cyberdetox.ai"
+      email: "aisha@ReelFace.ai"
     }
   ];
 
@@ -494,7 +494,7 @@ const About = () => {
                 delay={0.4}
               >
                 <p className="text-gray-700 mb-4">
-                  Founded in 2015, Cyberdetox began with a simple vision: to bridge the gap between cutting-edge AI research and practical business applications. Our founders recognized that while AI technology was advancing rapidly, many businesses struggled to implement it effectively.
+                  Founded in 2015, ReelFace began with a simple vision: to bridge the gap between cutting-edge AI research and practical business applications. Our founders recognized that while AI technology was advancing rapidly, many businesses struggled to implement it effectively.
                 </p>
               </FloatingElement>
 

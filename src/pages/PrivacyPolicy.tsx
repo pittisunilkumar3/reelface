@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Privacy Policy - Cyberdetox"
+        title="Privacy Policy - ReelFace"
         description="Our privacy policy outlines how we collect, use, and protect your personal information."
       />
 
@@ -180,7 +180,7 @@ const PrivacyPolicy = () => {
                     </div>
                   </div>
                   <p className="text-gray-900 text-lg leading-relaxed font-medium">
-                    This document outlines how Cyberdetox collects, uses, and protects your personal information.
+                    This document outlines how ReelFace collects, uses, and protects your personal information.
                     We are committed to ensuring the privacy and security of all user data.
                   </p>
                 </div>
@@ -191,7 +191,7 @@ const PrivacyPolicy = () => {
                 <PolicySection title="Introduction" icon={Shield} id="introduction">
                   <div id="introduction" className="pt-4">
                     <p className="mb-4 text-gray-800 leading-relaxed">
-                      At <span className="font-semibold text-cyberpink">Cyberdetox</span>, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                      At <span className="font-semibold text-cyberpink">ReelFace</span>, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
                     </p>
                     <p className="mb-4 text-gray-800 leading-relaxed">
                       We are committed to protecting your personal data and ensuring your information is handled in accordance with applicable data protection laws. We've designed this policy to be transparent about our practices and to empower you to make informed decisions about your personal information.
@@ -313,7 +313,7 @@ const PrivacyPolicy = () => {
                   <div id="how-we-use" className="pt-4">
                     <h3 className="text-lg font-semibold text-cyberpink mb-3">Purpose of Data Collection</h3>
                     <p className="mb-4 text-gray-800 leading-relaxed">
-                      At Cyberdetox, we believe in transparency regarding how we use your personal information. We process your data for specific, legitimate purposes, including:
+                      At ReelFace, we believe in transparency regarding how we use your personal information. We process your data for specific, legitimate purposes, including:
                     </p>
 
                     <div className="mb-6 bg-white shadow-sm rounded-lg p-5 border border-gray-100">
@@ -473,7 +473,7 @@ const PrivacyPolicy = () => {
                         </div>
                         <div className="p-4">
                           <p className="text-gray-700 text-sm leading-relaxed">
-                            If Cyberdetox or our assets are acquired by a third party, personal information held by us about our users may be one of the transferred assets. In such cases:
+                            If ReelFace or our assets are acquired by a third party, personal information held by us about our users may be one of the transferred assets. In such cases:
                           </p>
                           <ul className="mt-2 space-y-1 text-sm text-gray-700">
                             <li className="flex items-center">
@@ -570,7 +570,7 @@ const PrivacyPolicy = () => {
                   <div id="security" className="pt-4">
                     <h3 className="text-lg font-semibold text-cyberpink mb-3">Our Security Commitment</h3>
                     <p className="mb-4 text-gray-800 leading-relaxed">
-                      At Cyberdetox, protecting your personal information is a top priority. We implement comprehensive security measures to safeguard your data against unauthorized access, alteration, disclosure, or destruction.
+                      At ReelFace, protecting your personal information is a top priority. We implement comprehensive security measures to safeguard your data against unauthorized access, alteration, disclosure, or destruction.
                     </p>
 
                     <div className="bg-white shadow-sm rounded-lg p-5 border border-gray-100 mb-6">
@@ -675,7 +675,7 @@ const PrivacyPolicy = () => {
                   <div id="children" className="pt-4">
                     <h3 className="text-xl font-bold text-cyberpink mb-4 tracking-tight">Children's Privacy Protection</h3>
                     <p className="mb-5 text-gray-900 leading-relaxed text-base font-medium">
-                      Cyberdetox is committed to protecting the privacy of children who use our website and services. We recognize the importance of safeguarding the personal information of minors.
+                      ReelFace is committed to protecting the privacy of children who use our website and services. We recognize the importance of safeguarding the personal information of minors.
                     </p>
 
                     <div className="bg-white shadow-sm rounded-lg p-5 border border-gray-100 mb-6">
@@ -691,7 +691,7 @@ const PrivacyPolicy = () => {
                           <div className="bg-gradient-to-r from-cyberpink/5 to-cyberpurple/5 p-4 rounded-lg">
                             <h5 className="font-medium text-cyberpink mb-2">If You Are a Parent or Guardian</h5>
                             <p className="text-gray-700 text-sm">
-                              If you believe we have collected information from your child under the age of 13 without your consent, please contact us immediately at <a href="mailto:privacy@cyberdetox.com" className="text-cyberpink hover:underline">privacy@cyberdetox.com</a>. We will take prompt steps to remove that information from our servers.
+                              If you believe we have collected information from your child under the age of 13 without your consent, please contact us immediately at <a href="mailto:privacy@ReelFace.com" className="text-cyberpink hover:underline">privacy@ReelFace.com</a>. We will take prompt steps to remove that information from our servers.
                             </p>
                           </div>
                         </div>
@@ -787,7 +787,7 @@ const PrivacyPolicy = () => {
                               </div>
                               <div>
                                 <h5 className="font-medium text-gray-700">Email</h5>
-                                <a href="mailto:privacy@cyberdetox.com" className="text-cyberpink hover:underline">privacy@cyberdetox.com</a>
+                                <a href="mailto:privacy@ReelFace.com" className="text-cyberpink hover:underline">privacy@ReelFace.com</a>
                                 <p className="text-xs text-gray-500 mt-1">For privacy-related inquiries</p>
                               </div>
                             </div>
@@ -822,7 +822,7 @@ const PrivacyPolicy = () => {
                             <div>
                               <h5 className="font-medium text-gray-700">Headquarters</h5>
                               <address className="not-italic text-gray-700 leading-relaxed">
-                                Cyberdetox, Inc.<br />
+                                ReelFace, Inc.<br />
                                 123 Digital Avenue<br />
                                 Tech District<br />
                                 Innovation City, CA 94105<br />
@@ -833,7 +833,7 @@ const PrivacyPolicy = () => {
 
                           <div className="mt-4 pt-4 border-t border-gray-100">
                             <p className="text-sm text-gray-600">
-                              For formal privacy requests, including data access, correction, or deletion requests, please send a written request to this address or email us at <a href="mailto:privacy@cyberdetox.com" className="text-cyberpink hover:underline">privacy@cyberdetox.com</a>.
+                              For formal privacy requests, including data access, correction, or deletion requests, please send a written request to this address or email us at <a href="mailto:privacy@ReelFace.com" className="text-cyberpink hover:underline">privacy@ReelFace.com</a>.
                             </p>
                           </div>
                         </div>

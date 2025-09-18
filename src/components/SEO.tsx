@@ -9,7 +9,7 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Cyberdetox - Digital Wellness & Cybersecurity Solutions',
+  title = 'ReelFace - Digital Wellness & Cybersecurity Solutions',
   description = 'Helping individuals and businesses achieve digital balance and security. Experience our comprehensive cybersecurity and digital wellness solutions.',
   image = 'https://lovable.dev/opengraph-image-p98pqg.png',
   type = 'website'
