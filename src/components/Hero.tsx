@@ -49,16 +49,19 @@ const TypingAnimation = ({ texts, typingSpeed = 150, deletingSpeed = 75, pauseTi
 };
 
 const Hero = () => {
-  const typingTexts = [
-    "Video Production",
-    "Content Creation",
-    "Digital Media",
-    "Brand Storytelling",
-    "Social Media Content",
-    "Corporate Videos",
-    "Creative Direction"
-  ];
+  // const typingTexts = [
+  //   "Video Production",
+  //   "Content Creation",
+  //   "Digital Media",
+  //   "Brand Storytelling",
+  //   "Social Media Content",
+  //   "Corporate Videos",
+  //   "Creative Direction"
+  // ];
 
+  const typingTexts = [
+    " I become the face of your brand"
+  ];
   const features = [
     {
       icon: <Brain className="h-5 w-5" />,
@@ -137,7 +140,7 @@ const Hero = () => {
               className="relative"
             >
               <h1 className="heading-xl mb-6 relative">
-                Professional <TypingAnimation texts={typingTexts} /> Solutions
+                 <TypingAnimation texts={typingTexts} />
               </h1>
             </FloatingElement>
           </div>
@@ -148,7 +151,7 @@ const Hero = () => {
             className="relative"
           >
             <p className="text-lg mb-6 text-gray-700 max-w-lg">
-              I become the face of your brand—providing a dedicated, exclusive, and conversion-focused on-screen presence that helps your brand tell stories audiences remember and that drive results.
+             Providing a dedicated, exclusive, and conversion-focused on-screen presence that helps your brand tell stories audiences remember and that drive results.
             </p>
           </FloatingElement>
 

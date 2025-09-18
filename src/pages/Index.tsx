@@ -18,7 +18,7 @@ import { getOptimizedImageUrl } from '@/utils/imageOptimization';
 import FloatingElement from '@/components/FloatingElement';
 
 // Animation utility for counting up numbers
-const CountUp = ({ end, duration = 2000 }) => {
+const CountUp = ({ end, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -63,7 +63,7 @@ const CountUp = ({ end, duration = 2000 }) => {
     requestAnimationFrame(animateCount);
   }, [end, duration, isVisible]);
 
-  return <span ref={countRef}>{count}+</span>;
+  return <span ref={countRef}>{count}{suffix}</span>;
 };
 
 const Index = () => {
@@ -315,17 +315,17 @@ const Index = () => {
             </FloatingElement>
             <FloatingElement animationType="slide-up" delay={0.2}>
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                We've helped businesses across industries achieve remarkable results through our AI development expertise
+                Where Memorable Presence Meets Measurable Growth.
               </p>
             </FloatingElement>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
             {[
-              { value: 150, label: "Clients Worldwide", icon: <Globe className="h-8 w-8" /> },
-              { value: 200, label: "Projects Completed", icon: <CheckCircle className="h-8 w-8" /> },
-              { value: 15, label: "Years Experience", icon: <Award className="h-8 w-8" /> },
-              { value: 98, label: "Client Satisfaction", icon: <Users className="h-8 w-8" /> }
+              { value: 50, suffix: "+", label: "Clients", icon: <Globe className="h-8 w-8" /> },
+              { value: 3, suffix: "M+", label: "Organic Views", icon: <CheckCircle className="h-8 w-8" /> },
+              { value: 2, suffix: "+", label: "Years Experience", icon: <Award className="h-8 w-8" /> },
+              { value: 90, suffix: "%", label: "Repeat Clients", icon: <Users className="h-8 w-8" /> }
             ].map((stat, index) => (
               <FloatingElement
                 key={index}
@@ -338,13 +338,16 @@ const Index = () => {
                     {stat.icon}
                   </div>
                   <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-reelred to-reelblack bg-clip-text text-transparent mb-2">
-                    <CountUp end={stat.value} />
+                    <CountUp end={stat.value} suffix={stat.suffix} />
                   </div>
                   <p className="text-gray-600 font-medium">{stat.label}</p>
                 </div>
               </FloatingElement>
             ))}
           </div>
+
+
+          
         </div>
         {/* Background animation */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
@@ -357,7 +360,7 @@ const Index = () => {
       </section>
 
       {/* Client Logos Section */}
-      <section className="py-12 bg-gray-50 relative overflow-hidden">
+      {/* <section className="py-12 bg-gray-50 relative overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="text-center mb-10">
             <FloatingElement animationType="slide-up" delay={0.1}>
@@ -396,11 +399,10 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Background animation */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <HexagonNetwork width={1200} height={200} nodeCount={20} />
         </div>
-      </section>
+      </section> */}
 
       <Services />
 
