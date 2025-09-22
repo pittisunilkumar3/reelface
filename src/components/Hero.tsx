@@ -181,22 +181,10 @@ const Hero = () => {
                 to="/services"
                 className="button-primary text-lg px-8 py-4"
               >
-                Our AI Solutions <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                Book ReelFace <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </FloatingElement>
 
-            <FloatingElement
-              animationType="slide-up"
-              delay={0.5}
-              hoverEffect={true}
-            >
-              <Link
-                to="/contact"
-                className="button-secondary text-lg px-8 py-4"
-              >
-                Start Your AI Project
-              </Link>
-            </FloatingElement>
           </div>
 
           {/* Tech icons grid */}
