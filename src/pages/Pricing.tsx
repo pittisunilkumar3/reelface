@@ -339,7 +339,7 @@ const Pricing = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-gradient-to-r from-reelred to-reelblack text-white">
+      {/* <section className="section bg-gradient-to-r from-reelred to-reelblack text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="heading-lg mb-6">Ready to Get Started?</h2>
@@ -357,7 +357,7 @@ const Pricing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

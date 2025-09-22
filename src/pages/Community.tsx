@@ -278,7 +278,8 @@ const Community = () => {
               </div>
 
               {/* Community stats */}
-              <div className="grid grid-cols-3 gap-4 mt-12">
+
+              {/* <div className="grid grid-cols-3 gap-4 mt-12">
                 {[
                   { value: 500, label: "Active Members", icon: <Users className="h-5 w-5" /> },
                   { value: 25, label: "Countries", icon: <Globe className="h-5 w-5" /> },
@@ -297,7 +298,8 @@ const Community = () => {
                     <p className="text-xs text-white/80">{stat.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
+              
             </div>
 
             <div className="relative hidden lg:block">

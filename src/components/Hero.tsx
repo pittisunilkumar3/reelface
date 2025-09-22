@@ -109,8 +109,8 @@ const Hero = () => {
         <div className="absolute top-2/3 left-1/3 w-40 h-40 rounded-full bg-reelwhite-100 blur-2xl animate-pulse-slow animation-delay-2000"></div>
       </div>
 
-      <div className="container-custom grid lg:grid-cols-2 gap-12 items-center relative z-10">
-        <div className="order-2 lg:order-1">
+      <div className="container-custom relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="relative">
             {/* Floating decorative elements */}
             <FloatingElement
@@ -139,8 +139,8 @@ const Hero = () => {
               animationType="slide-up"
               className="relative"
             >
-              <h1 className="heading-xl mb-6 relative">
-                 <TypingAnimation texts={typingTexts} />
+              <h1 className="heading-xl mb-8 relative text-center">
+                <TypingAnimation texts={typingTexts} />
               </h1>
             </FloatingElement>
           </div>
@@ -150,21 +150,36 @@ const Hero = () => {
             delay={0.2}
             className="relative"
           >
-            <p className="text-lg mb-6 text-gray-700 max-w-lg">
-             Providing a dedicated, exclusive, and conversion-focused on-screen presence that helps your brand tell stories audiences remember and that drive results.
+            <p className="text-xl mb-8 text-gray-700 max-w-3xl mx-auto leading-relaxed text-center">
+              Providing a dedicated, exclusive, and conversion-focused on-screen presence that helps your brand tell stories audiences remember and that drive results.
             </p>
           </FloatingElement>
 
+          {/* Feature highlights */}
+          <FloatingElement
+            animationType="slide-up"
+            delay={0.3}
+            className="mb-10"
+          >
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              {features.slice(0, 3).map((feature, index) => (
+                <div key={index} className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                  <span className="text-reelred-500 mr-2">{feature.icon}</span>
+                  <span className="text-gray-700 font-medium text-sm">{feature.text}</span>
+                </div>
+              ))}
+            </div>
+          </FloatingElement>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <FloatingElement
               animationType="slide-up"
               delay={0.4}
               hoverEffect={true}
             >
               <Link
-                to="/product"
-                className="button-primary"
+                to="/services"
+                className="button-primary text-lg px-8 py-4"
               >
                 Our AI Solutions <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -177,73 +192,44 @@ const Hero = () => {
             >
               <Link
                 to="/contact"
-                className="button-secondary"
+                className="button-secondary text-lg px-8 py-4"
               >
                 Start Your AI Project
               </Link>
             </FloatingElement>
           </div>
 
-
-          {/* Animated Hexagon Network */}
-          <div className="mt-8 lg:mt-12 relative h-[150px] w-full max-w-md">
-            <HexagonNetwork width={400} height={150} nodeCount={15} className="opacity-70" />
-          </div>
-        </div>
-
-        <div className="order-1 lg:order-2 relative">
+          {/* Tech icons grid */}
           <FloatingElement
-            className="relative z-10"
-            animationType="float"
-            duration={6}
+            animationType="slide-up"
+            delay={0.6}
+            className="mb-8"
           >
-            <div className="bg-gradient-to-br from-reelred-50 to-reelblack-50 backdrop-blur-sm rounded-3xl p-6 md:p-10 relative z-10 shadow-lg transform transition-all duration-500 hover:shadow-xl">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white shadow-xl">
-                
-                
-              </div>
-
-
-              {/* Animated decorative elements */}
-              <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-reelred-200/30 blur-2xl animate-pulse-slow"></div>
-              <div className="absolute bottom-0 left-1/4 w-32 h-32 rounded-full bg-reelblack-200/40 blur-3xl animate-pulse-slow animation-delay-1000"></div>
-
-              {/* Floating tech icons */}
-              <FloatingElement
-                delay={0.7}
-                className="absolute -top-6 -right-6 bg-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-20"
-                animationType="bounce-vertical"
-                duration={4}
-              >
-                <Brain className="h-6 w-6 text-reelred-500" />
-              </FloatingElement>
-
-              <FloatingElement
-                delay={1.5}
-                className="absolute -bottom-4 -left-4 bg-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center z-20"
-                animationType="bounce-vertical"
-                duration={5}
-              >
-                <Zap className="h-5 w-5 text-reelblack-800" />
-              </FloatingElement>
-
-              <FloatingElement
-                delay={1.0}
-                className="absolute -bottom-6 -right-6 bg-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center z-20"
-                animationType="bounce-vertical"
-                duration={4.5}
-              >
-                <Code className="h-5 w-5 text-reelwhite-800" />
-              </FloatingElement>
+            <div className="grid grid-cols-4 md:grid-cols-8 gap-4 max-w-2xl mx-auto">
+              {techIcons.map((tech, index) => (
+                <FloatingElement
+                  key={index}
+                  animationType="float"
+                  delay={0.7 + index * 0.1}
+                  duration={4 + index * 0.5}
+                  className={`${tech.bgColor} p-3 rounded-xl ${tech.color} hover:scale-110 transition-transform duration-300 cursor-pointer`}
+                >
+                  {tech.icon}
+                </FloatingElement>
+              ))}
             </div>
           </FloatingElement>
 
-          {/* Additional decorative elements */}
-          <div className="absolute top-1/3 right-0 w-full h-full -z-10">
-            <svg className="w-full h-full opacity-5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#FF1493" d="M39.9,-65.7C54.3,-60.9,70.2,-54.3,79.7,-42.3C89.2,-30.3,92.3,-12.9,88.2,2.4C84.1,17.6,72.8,30.8,61.4,42.4C50,54,38.5,64,25.3,70.5C12.1,77,-2.8,80,-17.1,77.4C-31.4,74.8,-45.1,66.6,-56.4,55.6C-67.7,44.6,-76.7,30.8,-80.3,15.5C-83.9,0.2,-82.1,-16.6,-75.7,-31.2C-69.3,-45.8,-58.3,-58.2,-45,-64.8C-31.7,-71.4,-16.3,-72.2,-1.5,-69.8C13.3,-67.4,25.5,-70.5,39.9,-65.7Z" transform="translate(100 100)" />
-            </svg>
-          </div>
+          {/* Animated Hexagon Network - Centered */}
+          <FloatingElement
+            animationType="slide-up"
+            delay={0.8}
+            className="flex justify-center"
+          >
+            <div className="relative h-[200px] w-full max-w-lg">
+              <HexagonNetwork width={500} height={200} nodeCount={20} className="opacity-60" />
+            </div>
+          </FloatingElement>
         </div>
       </div>
 

@@ -230,7 +230,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       
       <SEO
-        title="ReelFace - Advanced AI Development Solutions"
+        title="ReelFace - Advanced Book ReelFace"
         description="ReelFace specializes in cutting-edge AI development, creating intelligent solutions that transform how businesses operate while ensuring digital wellness and security."
       />
       <Hero />
@@ -441,74 +441,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-gradient-to-r from-reelred to-reelblack text-white relative overflow-hidden">
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <FloatingElement animationType="slide-up" delay={0.1}>
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                <Sparkles className="h-4 w-4 mr-2" />
-                Start Your AI Journey Today
-              </div>
-            </FloatingElement>
-
-            <FloatingElement animationType="slide-up" delay={0.2}>
-              <h2 className="heading-lg mb-6">Ready to Transform Your Business with AI?</h2>
-            </FloatingElement>
-
-            <FloatingElement animationType="slide-up" delay={0.3}>
-              <p className="text-lg opacity-90 mb-8">
-                Get in touch with our team of AI specialists to discuss how our development services can accelerate your innovation and growth.
-              </p>
-            </FloatingElement>
-
-            <div className="flex flex-wrap gap-4 justify-center">
-              <FloatingElement animationType="slide-up" delay={0.4} hoverEffect={true}>
-                <Link
-                  to="/contact"
-                  className="bg-white text-reelred font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition-all duration-300 hover:shadow-lg inline-flex items-center"
-                >
-                  Start Your AI Project
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </FloatingElement>
-
-              <FloatingElement animationType="slide-up" delay={0.5} hoverEffect={true}>
-                <Link
-                  to="/product"
-                  className="bg-transparent border border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white/10 transition-all duration-300 hover:shadow-lg inline-flex items-center"
-                >
-                  Explore Our AI Solutions
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </FloatingElement>
-            </div>
-
-            {/* Additional contact options */}
-            <FloatingElement animationType="slide-up" delay={0.6}>
-              <div className="mt-12 pt-8 border-t border-white/20 flex flex-wrap justify-center gap-8">
-                <div className="flex items-center text-white/90">
-                  <Mail className="h-5 w-5 mr-2" />
-                  <span>info@reelface.com</span>
-                </div>
-                <div className="flex items-center text-white/90">
-                  <Phone className="h-5 w-5 mr-2" />
-                  <span>+1 (323) 555-REEL</span>
-                </div>
-              </div>
-            </FloatingElement>
-          </div>
-        </div>
-
-        {/* Animated background */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <HexagonNetwork width={1200} height={400} nodeCount={40} />
-        </div>
-
-        {/* Animated background elements */}
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-white/10 blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-pulse-slow animation-delay-1000"></div>
-        <div className="absolute top-3/4 left-1/3 w-40 h-40 rounded-full bg-white/10 blur-2xl animate-pulse-slow animation-delay-2000"></div>
-      </section>
+      
 
     </div>
   );
