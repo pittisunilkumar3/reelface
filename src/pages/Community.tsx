@@ -635,21 +635,10 @@ const Community = () => {
               </div>
             </div>
 
-            {/* Community stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">500+</div>
-                <div className="text-white/80 text-sm">Active Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">25+</div>
-                <div className="text-white/80 text-sm">Countries</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-1">100+</div>
-                <div className="text-white/80 text-sm">Monthly Events</div>
-              </div>
-            </div>
+            
+
+
+
           </div>
         </div>
       </section>
