@@ -538,10 +538,10 @@ const Community = () => {
             {[
               {
                 step: '1',
-                title: '🎯 Sign Up',
-                description: 'Create your free account and complete your creative profile to let others know about your interests and skills.',
-                icon: '👋',
-                color: 'from-orange-400 to-yellow-400'
+                title: '📱 Join Our WhatsApp Community',
+                description: 'Join our official WhatsApp group to connect, network, and stay updated with our community.',
+                icon: '�',
+                color: 'from-green-400 to-emerald-400'
               },
               {
                 step: '2',
