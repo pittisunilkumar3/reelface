@@ -1,12 +1,12 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import ContactForm from '@/components/ContactForm';
 import {
   Mail, Phone, MapPin, Clock, MessageSquare,
   ChevronDown, Headphones, Globe, Users,
   ArrowRight, Sparkles, Building, CheckCircle,
   Facebook, Twitter, Linkedin, Instagram, Youtube,
-  HelpCircle, Award, Shield, Zap, Star, ThumbsUp
+  HelpCircle, Award, Shield, Zap, Star
 } from 'lucide-react';
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
@@ -22,6 +22,99 @@ const FloatingElement = ({ children, delay = 0, className = "" }) => {
       style={{ animationDelay: `${delay}s` }}
     >
       {children}
+    </div>
+  );
+};
+
+// FAQ Section Component with expandable functionality
+const FAQSection = () => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: "What makes ReelFace different from other video production companies?",
+      answer: "We don't just create videos – we become the exclusive face of your brand. Our dedicated talent becomes your brand ambassador, creating consistent, authentic content that builds trust and recognition. This exclusive approach ensures your audience connects with a familiar face across all your content."
+    },
+    {
+      question: "How does the 'Brand Face' service work?",
+      answer: "We assign a dedicated professional talent who becomes the exclusive face of your brand. They learn your brand voice, values, and messaging to create authentic content. This person appears consistently in your reels, building familiarity and trust with your audience while maintaining professional quality."
+    },
+    {
+      question: "What platforms do you create content for?",
+      answer: "We create optimized content for all major social media platforms including Instagram Reels, TikTok, YouTube Shorts, LinkedIn videos, Facebook, and more. Each piece of content is tailored to the specific platform's requirements, audience behavior, and optimal formats."
+    },
+    {
+      question: "What's included in your video production packages?",
+      answer: "Our packages typically include script development, professional filming with high-end equipment, post-production editing, color grading, sound design, and multi-format optimization. We also provide content strategy consultation and performance tracking recommendations."
+    },
+    {
+      question: "How long does it take to produce content?",
+      answer: "Timeline varies by project scope. Simple reels can be delivered within 3-5 business days, while comprehensive campaigns with multiple videos may take 1-2 weeks. We offer rush delivery options for urgent projects and maintain clear communication throughout the process."
+    },
+    {
+      question: "Do you provide content strategy and planning?",
+      answer: "Absolutely! We offer comprehensive content strategy services including audience research, content calendar planning, script writing, and performance optimization. Our team helps align your content with your business goals and target audience preferences."
+    },
+    {
+      question: "Can you work with our existing brand guidelines?",
+      answer: "Yes, we work closely with your existing brand guidelines, visual identity, and messaging framework. Our team ensures all content maintains brand consistency while optimizing for engagement and platform-specific requirements."
+    },
+    {
+      question: "What are your pricing options?",
+      answer: "We offer flexible pricing based on project scope, content volume, and service requirements. Options include per-project pricing, monthly retainers, and custom packages. Contact us for a personalized quote based on your specific needs and budget."
+    },
+    {
+      question: "Do you offer revisions and feedback incorporation?",
+      answer: "Yes, we include revision rounds in all our packages. We work collaboratively with clients to ensure the final content meets expectations and aligns with brand goals. Our process includes review checkpoints and feedback incorporation."
+    },
+    {
+      question: "Can you help with personal branding for executives and professionals?",
+      answer: "Definitely! We specialize in personal branding for professionals, executives, and thought leaders. This includes professional headshots, LinkedIn optimization, thought leadership content creation, and building a consistent online presence that enhances professional reputation."
+    }
+  ];
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {faqs.map((faq, index) => (
+        <div key={index} className="mb-4 bg-gray-50 rounded-xl overflow-hidden hover:shadow-md transition-all duration-300">
+          <button
+            onClick={() => toggleFAQ(index)}
+            className="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-reelred/50 rounded-xl"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-start">
+                <div className="mr-4 mt-1 text-reelred">
+                  <HelpCircle className="h-5 w-5" />
+                </div>
+                <h3 className="font-semibold text-lg text-gray-800 pr-4">
+                  {faq.question}
+                </h3>
+              </div>
+              <div className="flex-shrink-0">
+                <ChevronDown
+                  className={`h-5 w-5 text-gray-500 transition-transform duration-300 ${
+                    openFAQ === index ? 'transform rotate-180' : ''
+                  }`}
+                />
+              </div>
+            </div>
+          </button>
+
+          <div className={`overflow-hidden transition-all duration-300 ${
+            openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            <div className="px-6 pb-6">
+              <div className="ml-9 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
@@ -73,7 +166,7 @@ const Contact = () => {
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
                   { icon: <Mail className="h-4 w-4" />, text: "Email Us" },
-                  { icon: <Phone className="h-4 w-4" />, text: "Call Us" },
+                  { icon: <Phone className="h-4 w-4" />, text: "Whatsapp Us" },
                   { icon: <MessageSquare className="h-4 w-4" />, text: "Live Chat" }
                 ].map((badge, index) => (
                   <div
@@ -95,11 +188,11 @@ const Contact = () => {
                   <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
                 </Link>
                 <a
-                  href="tel:+11234567890"
+                  href="tel:+91 9949292553"
                   className="bg-white/10 hover:bg-white/20 transition-all text-white font-semibold py-3 px-6 rounded-md inline-flex items-center hover:shadow-lg transform hover:-translate-y-1"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  Call Now
+                  Whatsapp Us
                 </a>
               </div>
 
@@ -112,8 +205,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-white">Email Us</h3>
-                      <a href="mailto:info@reelface.com" className="text-white/80 text-sm hover:text-white">
-                        info@reelface.com
+                      <a href="mailto:thereelface@gmail.com" className="text-white/80 text-sm hover:text-white">
+                        thereelface@gmail.com
                       </a>
                     </div>
                   </div>
@@ -126,8 +219,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-white">Call Us</h3>
-                      <a href="tel:+13235557335" className="text-white/80 text-sm hover:text-white">
-                        +1 (323) 555-REEL
+                      <a href="tel:+919949292553" className="text-white/80 text-sm hover:text-white">
+                        +91 9949292553
                       </a>
                     </div>
                   </div>
@@ -222,7 +315,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg">Email</h3>
                     <a href="mailto:info@aicompany.com" className="text-gray-600 hover:text-aipurple">
-                      info@aicompany.com
+                      thereelface@gmail.com
                     </a>
                   </div>
                 </div>
@@ -233,8 +326,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Phone</h3>
-                    <a href="tel:+11234567890" className="text-gray-600 hover:text-aipurple">
-                      +1 (123) 456-7890
+                    <a href="tel:+919949292553" className="text-gray-600 hover:text-aipurple">
+                      +91 9949292553
                     </a>
                   </div>
                 </div>
@@ -267,18 +360,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-100 p-6 rounded-xl">
-                <h3 className="font-semibold text-lg mb-3">Schedule a Demo</h3>
-                <p className="text-gray-600 mb-4">
-                  Interested in seeing our AI platform in action? Schedule a personalized demo with one of our experts.
-                </p>
-                <a
-                  href="mailto:demos@aicompany.com?subject=Request%20for%20Demo"
-                  className="button-primary inline-flex"
-                >
-                  Request a Demo
-                </a>
-              </div>
             </div>
 
             <div>
@@ -294,55 +375,16 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="heading-md mb-4">Frequently Asked Questions</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Find answers to common questions about our services, support, and how to get in touch with our team.
+              Get answers to common questions about our video production services, brand face solutions, and how we can help elevate your content strategy.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                question: "How quickly will I receive a response?",
-                answer: "We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call our support line for immediate assistance."
-              },
-              {
-                question: "Do you offer custom solutions?",
-                answer: "Yes, we specialize in creating tailored AI solutions to meet your specific business needs. Contact us to discuss your requirements and we'll develop a custom plan."
-              },
-              {
-                question: "What information should I include in my inquiry?",
-                answer: "To help us serve you better, please include details about your project, timeline, budget considerations, and specific requirements in your initial message."
-              },
-              {
-                question: "Can I schedule a demo before committing?",
-                answer: "Absolutely! We offer personalized demos of our platform and services. Use the 'Request a Demo' button on this page to schedule a time with our team."
-              },
-              {
-                question: "Do you provide support after implementation?",
-                answer: "Yes, we offer comprehensive post-implementation support and maintenance services to ensure your solution continues to perform optimally."
-              },
-              {
-                question: "What areas do you serve?",
-                answer: "We provide services globally with offices in major tech hubs. Our team can work remotely with clients anywhere in the world."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300">
-                <div className="flex items-start">
-                  <div className="mr-4 mt-1 text-reelred">
-                    <HelpCircle className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{faq.question}</h3>
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <FAQSection />
 
           <div className="text-center mt-10">
-            <p className="text-gray-600 mb-4">Still have questions?</p>
-            <a href="mailto:support@aicompany.com" className="button-primary inline-flex items-center">
-              Contact Support
+            <p className="text-gray-600 mb-4">Still have questions about our services?</p>
+            <a href="mailto:thereelface@gmail.com" className="button-primary inline-flex items-center">
+              Contact Our Team
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </div>
@@ -353,43 +395,43 @@ const Contact = () => {
       <section className="section bg-gradient-to-r from-reelred/10 to-reelblack/10">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="heading-md mb-4">Why Choose Us</h2>
+            <h2 className="heading-md mb-4">Why Choose ReelFace</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing exceptional service and innovative solutions to help your business succeed.
+              We don't just create content – we become the authentic face of your brand, delivering professional video production that drives real engagement and builds lasting connections with your audience.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
+                icon: <Star className="h-8 w-8" />,
+                title: "Exclusive Brand Face",
+                description: "We provide dedicated, exclusive talent that becomes the authentic face of your brand, creating consistent and recognizable content that builds trust and brand recognition."
+              },
+              {
                 icon: <Award className="h-8 w-8" />,
-                title: "Expert Team",
-                description: "Our team consists of industry experts with years of experience in AI and technology solutions."
+                title: "Professional Excellence",
+                description: "Our team combines creative storytelling with professional-grade equipment and post-production expertise to deliver content that stands out in today's competitive digital landscape."
               },
               {
                 icon: <Zap className="h-8 w-8" />,
-                title: "Fast Response",
-                description: "We pride ourselves on quick response times and efficient problem-solving for all client inquiries."
+                title: "Fast Turnaround",
+                description: "We understand the pace of social media. Our streamlined production process ensures quick delivery without compromising on quality, keeping your content calendar on track."
+              },
+              {
+                icon: <Users className="h-8 w-8" />,
+                title: "Conversion-Focused",
+                description: "Every piece of content we create is strategically designed to drive engagement, build audience connection, and ultimately convert viewers into customers for your business."
               },
               {
                 icon: <Shield className="h-8 w-8" />,
-                title: "Secure Solutions",
-                description: "Security is our priority. All our solutions are built with robust security measures to protect your data."
-              },
-              {
-                icon: <ThumbsUp className="h-8 w-8" />,
-                title: "Customer Satisfaction",
-                description: "We're not happy until you're happy. We work closely with clients to ensure complete satisfaction."
-              },
-              {
-                icon: <Star className="h-8 w-8" />,
-                title: "Quality Assurance",
-                description: "Every solution we deliver undergoes rigorous quality testing to ensure optimal performance."
+                title: "Brand Protection",
+                description: "We maintain strict brand guidelines and quality standards, ensuring every video aligns perfectly with your brand voice, values, and visual identity across all platforms."
               },
               {
                 icon: <Globe className="h-8 w-8" />,
-                title: "Global Support",
-                description: "With support available worldwide, we're ready to assist you no matter where you're located."
+                title: "Multi-Platform Expertise",
+                description: "From Instagram Reels to TikTok, YouTube Shorts to LinkedIn videos, we optimize content for each platform's unique requirements and audience behaviors."
               }
             ].map((feature, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group">
@@ -404,99 +446,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Our Clients Section */}
-      <section className="section bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="heading-md mb-4">Trusted by Leading Companies</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Join hundreds of businesses that rely on our expertise for their technology needs.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-            {[...Array(6)].map((_, index) => (
-              <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
-                <div className="h-12 w-32 bg-gray-200 rounded flex items-center justify-center">
-                  <p className="text-gray-500 text-sm">Client Logo {index + 1}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 bg-gray-50 rounded-xl p-6 max-w-3xl mx-auto">
-            <div className="flex items-start">
-              <div className="mr-4 text-reelred">
-                <CheckCircle className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Join Our Growing List of Satisfied Clients</h3>
-                <p className="text-gray-600 mb-4">
-                  See how our solutions have helped businesses across various industries achieve their goals and drive innovation.
-                </p>
-                <Link to="/case-studies" className="text-reelred font-medium hover:underline inline-flex items-center">
-                  View Case Studies
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What Happens Next Section */}
-      <section className="section bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="heading-md mb-4">What Happens Next?</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              After you reach out to us, here's what you can expect in our collaboration process.
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                {
-                  step: "1",
-                  title: "Initial Consultation",
-                  description: "We'll schedule a call to discuss your needs and how we can help."
-                },
-                {
-                  step: "2",
-                  title: "Custom Proposal",
-                  description: "Our team will create a tailored solution proposal for your review."
-                },
-                {
-                  step: "3",
-                  title: "Development",
-                  description: "Once approved, we'll begin developing your custom solution."
-                },
-                {
-                  step: "4",
-                  title: "Ongoing Support",
-                  description: "We provide continuous support to ensure optimal performance."
-                }
-              ].map((step, index) => (
-                <div key={index} className="relative">
-                  <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-                    <div className="bg-gradient-to-r from-reelred to-reelblack text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mb-4">
-                      {step.step}
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                  {index < 3 && (
-                    <div className="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 z-10">
-                      <ArrowRight className="h-6 w-6 text-gray-300" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Social Media Contact Section */}
       <section className="section bg-white">
@@ -606,8 +556,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-lg">Contact</h3>
                   <p className="text-gray-600">
-                    Phone: +1 (123) 456-7890<br />
-                    Email: info@aicompany.com
+                    Phone: +91 9949292553<br />
+                    Email: thereelface@gmail.com
                   </p>
                 </div>
               </div>

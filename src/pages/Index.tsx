@@ -362,7 +362,7 @@ const Index = () => {
 
 
       {/* Team Highlights Section */}
-      <section className="section bg-white relative overflow-hidden">
+      {/* <section className="section bg-white relative overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <FloatingElement animationType="slide-up" delay={0.1}>
@@ -430,15 +430,13 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Background animation */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <HexagonNetwork width={1200} height={600} nodeCount={20} />
         </div>
 
-        {/* Animated background elements */}
         <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-cyberpink/5 blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/3 left-1/4 w-80 h-80 rounded-full bg-cyberpurple/5 blur-3xl animate-pulse-slow animation-delay-1000"></div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       
@@ -448,3 +446,5 @@ const Index = () => {
 };
 
 export default Index;
+
+
