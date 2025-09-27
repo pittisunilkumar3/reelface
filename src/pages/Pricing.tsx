@@ -111,6 +111,7 @@ const Pricing = () => {
         "reelface Branding Included"
       ],
 
+      
       cta: "Book now",
       popular: false,
       color: "from-green-500/70 to-green-300/20"
