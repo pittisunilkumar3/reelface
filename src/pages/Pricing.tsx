@@ -293,74 +293,144 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Main Pricing Plans */}
-      <section id="pricing-plans" className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your ReelFace Package</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Select the perfect package to elevate your brand's presence with professional reel content
-            </p>
+      {/* Main Pricing Plans - Redesigned */}
+      <section id="pricing-plans" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-reelred/20 to-reelblack/20 blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-3xl animate-pulse-slow animation-delay-1000"></div>
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-16">
+            <FloatingElement delay={0.1}>
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-reelred/10 to-reelblack/10 text-reelred text-sm font-medium mb-6">
+                <Star className="h-4 w-4 mr-2" />
+                Premium Packages
+              </div>
+            </FloatingElement>
+            <FloatingElement delay={0.2}>
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-reelred to-reelblack bg-clip-text text-transparent mb-6">
+                Choose Your ReelFace Experience
+              </h2>
+            </FloatingElement>
+            <FloatingElement delay={0.3}>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Transform your brand with our exclusive reel packages. From starter solutions to comprehensive brand transformations.
+              </p>
+            </FloatingElement>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {/* Enhanced Pricing Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-8xl mx-auto">
             {pricingPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={`relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${
-                  plan.popular ? 'ring-2 ring-reelred transform md:-translate-y-4' : ''
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute top-0 right-0 bg-reelred text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    MOST POPULAR
-                  </div>
-                )}
+              <FloatingElement key={index} delay={0.4 + index * 0.1}>
+                <div
+                  className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
+                    plan.popular ? 'ring-2 ring-reelred scale-105 lg:scale-110' : ''
+                  } border border-white/20`}
+                >
+                  {/* Animated background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                <div className={`bg-gradient-to-br ${plan.color} p-6 text-white`}>
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="opacity-90 mb-4">{plan.description}</p>
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-bold">₹{plan.monthlyPrice.toLocaleString()}</span>
-                    <span className="ml-2 opacity-80">
-                      {plan.isOneTime ? '' : plan.isStarting ? ' starting' : '/month'}
-                    </span>
-                  </div>
-                  {plan.isOneTime && (
-                    <p className="text-sm mt-1 opacity-80">
-                      One-time payment
-                    </p>
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                      <div className="bg-gradient-to-r from-reelred to-reelblack text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
+                        ⭐ MOST POPULAR
+                      </div>
+                    </div>
                   )}
-                </div>
 
-                <div className="p-6">
-                  <div className="mb-6">
-                    <h4 className="font-medium text-gray-900 mb-4">What's included:</h4>
-                    <ul className="space-y-3">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <Check className="h-5 w-5 text-reelred mr-3 shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Header with gradient */}
+                  <div className={`relative bg-gradient-to-br ${plan.color} p-8 text-white overflow-hidden`}>
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/10 -translate-y-16 translate-x-16"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-white/5 translate-y-12 -translate-x-12"></div>
+
+                    <div className="relative z-10">
+                      <h3 className="text-2xl font-bold mb-3 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
+                      <p className="opacity-90 mb-6 text-sm leading-relaxed">{plan.description}</p>
+
+                      {/* Price with animation */}
+                      <div className="flex items-baseline mb-2">
+                        <span className="text-5xl font-black group-hover:scale-110 transition-transform duration-300">
+                          ₹{plan.monthlyPrice.toLocaleString()}
+                        </span>
+                        <span className="ml-2 opacity-80 text-sm">
+                          {plan.isOneTime ? '' : plan.isStarting ? ' starting' : '/month'}
+                        </span>
+                      </div>
+                      {plan.isOneTime && (
+                        <p className="text-sm opacity-80 bg-white/20 rounded-full px-3 py-1 inline-block">
+                          One-time payment
+                        </p>
+                      )}
+                    </div>
                   </div>
 
+                  {/* Content */}
+                  <div className="relative p-8">
+                    <div className="mb-8">
+                      <h4 className="font-bold text-gray-900 mb-6 text-lg">What's included:</h4>
+                      <ul className="space-y-4">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start group/item">
+                            <div className="bg-gradient-to-r from-reelred to-reelblack p-1 rounded-full mr-3 shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform duration-300">
+                              <Check className="h-3 w-3 text-white" />
+                            </div>
+                            <span className="text-gray-700 text-sm leading-relaxed group-hover/item:text-gray-900 transition-colors duration-300">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
+                    {/* CTA Button */}
+                    <Link
+                      to="/contact"
+                      className={`w-full group/btn relative overflow-hidden rounded-xl py-4 px-6 font-bold text-center transition-all duration-300 transform hover:scale-105 ${
+                        plan.popular
+                          ? 'bg-gradient-to-r from-reelred to-reelblack text-white shadow-lg hover:shadow-xl'
+                          : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 hover:from-reelred hover:to-reelblack hover:text-white'
+                      } flex items-center justify-center`}
+                    >
+                      <span className="relative z-10 flex items-center">
+                        {plan.cta}
+                        <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      </span>
+                      {/* Button hover effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-reelred/20 to-reelblack/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    </Link>
+                  </div>
 
-                  <Link
-                    to={plan.name === "Enterprise" ? "/contact" : "/contact"}
-                    className={`w-full button-primary justify-center ${
-                      plan.popular ? 'bg-gradient-to-r from-reelred to-reelblack' : ''
-                    }`}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-reelred/5 to-reelblack/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                </div>
+              </FloatingElement>
+            ))}
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-16 text-center">
+            <FloatingElement delay={0.8}>
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div className="flex items-center text-sm text-gray-600">
+                  <Shield className="h-4 w-4 mr-2 text-green-500" />
+                  Secure Payment
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Award className="h-4 w-4 mr-2 text-blue-500" />
+                  Quality Guaranteed
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Users className="h-4 w-4 mr-2 text-purple-500" />
+                  50+ Happy Clients
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Zap className="h-4 w-4 mr-2 text-yellow-500" />
+                  Fast Delivery
                 </div>
               </div>
-            ))}
+            </FloatingElement>
           </div>
         </div>
       </section>

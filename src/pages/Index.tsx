@@ -163,7 +163,7 @@ const Index = () => {
   const faqs = [
     {
       question: "What is ReelFace?",
-      answer: "ReelFace is a specialised service where I become the exclusive face of your brand’s reels — creating authentic, engaging video content to grow your reach and awareness."
+      answer: "ReelFace makes your brand stand out on reels — either I become your brand's face, or you do, and we handle the rest. ReelFace ensures your brand connects with the right audience in the most engaging way." "ReelFace is a specialised service where I become the exclusive face of your brand’s reels — creating authentic, engaging video content to grow your reach and awareness."
     },
     {
       question: "How is ReelFace different from influencers?",
@@ -171,7 +171,7 @@ const Index = () => {
     },
     {
       question: "Who can use ReelFace?",
-      answer: "Startups & small businesses, cafés, salons, gyms, wellness brands, fashion, beauty, lifestyle, F&B, gadgets, and founders & professionals who want personal branding."
+      answer: "Startups and small businesses, cafés, salons, gyms, wellness brands, fashion, beauty, lifestyle, F&B, gadget brands, as well as founders and professionals looking to grow their personal brand and business."
     },
     {
       question: "Do you offer exclusivity for my brand?",
@@ -252,7 +252,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
             {[
               { value: 50, suffix: "+", label: "Clients", icon: <Globe className="h-8 w-8" /> },
-              { value: 3, suffix: "M+", label: "Organic Views", icon: <CheckCircle className="h-8 w-8" /> },
+              { value: 80, suffix: "M+", label: "Organic Views", icon: <CheckCircle className="h-8 w-8" /> },
               { value: 2, suffix: "+", label: "Years Experience", icon: <Award className="h-8 w-8" /> },
               { value: 90, suffix: "%", label: "Repeat Clients", icon: <Users className="h-8 w-8" /> }
             ].map((stat, index) => (

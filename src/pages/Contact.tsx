@@ -33,7 +33,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "What makes ReelFace different from other video production companies?",
-      answer: "We don't just create videos – we become the exclusive face of your brand. Our dedicated talent becomes your brand ambassador, creating consistent, authentic content that builds trust and recognition. This exclusive approach ensures your audience connects with a familiar face across all your content."
+      answer: "ReelFace makes your brand stand out on reels — either I become your brand's face, or you do, and we handle the rest. ReelFace ensures your brand connects with the right audience in the most engaging way."
     },
     {
       question: "How does the 'Brand Face' service work?",
@@ -41,7 +41,7 @@ const FAQSection = () => {
     },
     {
       question: "What platforms do you create content for?",
-      answer: "We create optimized content for all major social media platforms including Instagram Reels, TikTok, YouTube Shorts, LinkedIn videos, Facebook, and more. Each piece of content is tailored to the specific platform's requirements, audience behavior, and optimal formats."
+      answer: "Startups and small businesses, cafés, salons, gyms, wellness brands, fashion, beauty, lifestyle, F&B, gadget brands, as well as founders and professionals looking to grow their personal brand and business."
     },
     {
       question: "What's included in your video production packages?",
@@ -188,7 +188,7 @@ const Contact = () => {
                   <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
                 </Link>
                 <a
-                  href="tel:+91 9949292553"
+                  href="tel:+91 9505613553"
                   className="bg-white/10 hover:bg-white/20 transition-all text-white font-semibold py-3 px-6 rounded-md inline-flex items-center hover:shadow-lg transform hover:-translate-y-1"
                 >
                   <Phone className="mr-2 h-5 w-5" />
@@ -219,8 +219,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-white">Call Us</h3>
-                      <a href="tel:+919949292553" className="text-white/80 text-sm hover:text-white">
-                        +91 9949292553
+                      <a href="tel:+919505613553" className="text-white/80 text-sm hover:text-white">
+                        +91 9505613553
                       </a>
                     </div>
                   </div>
@@ -326,8 +326,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Phone</h3>
-                    <a href="tel:+919949292553" className="text-gray-600 hover:text-aipurple">
-                      +91 9949292553
+                    <a href="tel:+919505613553" className="text-gray-600 hover:text-aipurple">
+                      +91 9505613553
                     </a>
                   </div>
                 </div>
