@@ -163,7 +163,7 @@ const Index = () => {
   const faqs = [
     {
       question: "What is ReelFace?",
-      answer: "ReelFace makes your brand stand out on reels — either I become your brand's face, or you do, and we handle the rest. ReelFace ensures your brand connects with the right audience in the most engaging way." "ReelFace is a specialised service where I become the exclusive face of your brand’s reels — creating authentic, engaging video content to grow your reach and awareness."
+      answer: "ReelFace is a specialised service where I become the exclusive face of your brand’s reels — creating authentic, engaging video content to grow your reach and awareness."
     },
     {
       question: "How is ReelFace different from influencers?",
