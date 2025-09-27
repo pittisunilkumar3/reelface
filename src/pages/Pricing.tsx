@@ -12,8 +12,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import FloatingLogo from '@/components/FloatingLogo';
 import HexagonNetwork from '@/components/HexagonNetwork';
 
@@ -79,65 +77,73 @@ const FloatingElement = ({ children, delay = 0, className = "" }) => {
 };
 
 const Pricing = () => {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
-
-  const toggleBillingCycle = () => {
-    setBillingCycle(billingCycle === 'monthly' ? 'annual' : 'monthly');
-  };
 
   const pricingPlans = [
     {
-      name: "Collaboration",
-      description: "Best for small bussiness looking to create impactful reels with expert guidance.",
-      monthlyPrice: 5999,
-      annualPrice: 65989, // ~10% discount
+      name: "Face starter",
+      description: "The simplest way to step into the spotlight with ReelFace.",
+      monthlyPrice: 19999,
+      annualPrice: 199990, // One-time payment
+      isOneTime: true,
       features: [
-        "1 Professional reel shoot",
-        "Script, shooting, and editing support",
-        "Collaboration posts on Instagram",
-        "Brand-aligned wardrobe & styling",
-        "Strategy call to refine your message",
-        "Timely delivery"
+        "📱 5 Reels + 1 collab reel",
+        "✂️ Clean, professional edits",
+        "🔍 Basic research",
+        "📊 Performance insights",
+        "reelface Branding Included"
       ],
-      notIncluded: [
-        "Multiple reels per cycle",
-        "Monthly insights report",
-        "Podcast or interview production",
-        "Website or portfolio design",
-        "Influencer collaborations"
-      ],
-      cta: "Get Started",
+
+      cta: "Book now",
       popular: false,
+      color: "from-green-500/70 to-green-300/20"
+    },
+    {
+      name: "FaceLift",
+      description: "Your first step into the spotlight.",
+      monthlyPrice: 29999,
+      annualPrice: 299990, // One-time payment
+      isOneTime: true,
+      features: [
+        "📱 8 Reels + 1 collab reel",
+        "✂️ Scroll-stopping edits",
+        "🔍 Trend research",
+        "🎯 Spotlight Boost",
+        "reelface Branding Included"
+      ],
+
+      cta: "Book now",
+      popular: true,
       color: "from-reelred/70 to-reelred/20"
     },
     {
-      name: "Partnership",
-      description: "Perfect for brands and professionals seeking consistent reel-based content.",
-      monthlyPrice: 49999,
-      annualPrice: 549989, // ~10% discount
+      name: "FaceEmpire",
+      description: "Turn your brand into a conversation everyone's having.",
+      monthlyPrice: 39999,
+      annualPrice: 399990, // One-time payment
+      isOneTime: true,
       features: [
-        "5 Exclusive reels",
-        "Script planning & content strategy call",
-        "Professional shoot, edit, captions & hashtags",
-        "Brand-aligned wardrobe & styling",
-        "Monthly insights report + tips for next cycle",
-        "Timely delivery"
+        "📱 12 Reels + 1 collab reel",
+        "🔄 Edits that keep content in the loop",
+        "🔍 Deep trend & audience research",
+        "📊 Monthly performance insights",
+        "🎯 Visibility Push",
+        "reelface Branding Included"
       ],
-      notIncluded: [
-        "Cinematic trailer production",
-        "Speaking session opportunities",
-        "Website or portfolio design",
-        "Micro-influencer collaborations"
-      ],
-      cta: "Get Started",
-      popular: true,
-      color: "from-reelblack/70 to-reelblack/20"
-    },
+
+      cta: "Book now",
+      popular: false,
+      color: "from-yellow-500/70 to-yellow-300/20"
+    }
+  ];
+
+  // Additional service plans
+  const additionalPlans = [
     {
       name: "Personal Branding Services",
-      description: "Comprehensive package for professionals to establish and grow their personal brand.",
+      description: "Comprehensive package for professionals to establish and grow their personal brand",
       monthlyPrice: 99999,
-      annualPrice: 1099899, // ~10% discount
+      annualPrice: 1199988, // Monthly subscription
+      isMonthly: true,
       features: [
         "Cinematic trailer introducing your expertise",
         "8 short reels tailored to your niche",
@@ -148,10 +154,37 @@ const Pricing = () => {
         "Personal website or portfolio design",
         "2–3 micro-influencer collaborations to boost reach"
       ],
-      notIncluded: [],
-      cta: "Contact Sales",
-      popular: false,
-      color: "from-reelgray-600/70 to-reelgray-600/20"
+      cta: "Contact us",
+      color: "from-purple-500/70 to-purple-300/20"
+    },
+    {
+      name: "Face edits",
+      description: "Short-form video editing only",
+      monthlyPrice: 999,
+      annualPrice: 9990, // One-time payment
+      isOneTime: true,
+      features: [
+        "📱 Short-form video editing only",
+        "👥 For brands, individuals & professionals",
+        "⭐ Engaging, high-quality edits"
+      ],
+      cta: "Book now",
+      color: "from-blue-500/70 to-blue-300/20"
+    },
+    {
+      name: "Video Production",
+      description: "Professional video production services",
+      monthlyPrice: 4999,
+      annualPrice: 49990, // Starting price
+      isStarting: true,
+      features: [
+        "📹 Everyday Moments",
+        "🎉 Event Highlights",
+        "📖 Brand Story Shoot",
+        "💒 Wedding Memories"
+      ],
+      cta: "Contact us",
+      color: "from-gray-500/70 to-gray-300/20"
     }
   ];
 
@@ -161,7 +194,7 @@ const Pricing = () => {
     <div className="min-h-screen">
       <SEO
         title="Pricing - ReelFace"
-        description="Flexible pricing plans for businesses of all sizes. Choose the plan that fits your video production needs and budget."
+        description="Professional reel content packages and video production services. From Face starter to Personal Branding - find the perfect package for your brand."
       />
 
       {/* Pricing Hero Section */}
@@ -183,9 +216,9 @@ const Pricing = () => {
             <div className="lg:col-span-2 text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium mb-6 animate-pulse-slow">
                 <span className="mr-2 bg-white text-reelred p-1 rounded-full">
-                  <Percent className="h-3 w-3" />
+                  <Star className="h-3 w-3" />
                 </span>
-                Save 10% with Annual Billing
+                Professional Reel Content Packages
               </div>
 
               <h1 className="heading-xl mb-6 relative">
@@ -196,7 +229,7 @@ const Pricing = () => {
               </h1>
 
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Choose the plan that fits your needs. All plans include core features with different limits and capabilities to support your business growth.
+                From starter packages to comprehensive personal branding solutions. Find the perfect ReelFace package to elevate your brand's presence.
               </p>
 
 
@@ -242,28 +275,14 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Pricing Toggle */}
-      <section id="pricing-plans" className="py-12 bg-gray-50">
+      {/* Main Pricing Plans */}
+      <section id="pricing-plans" className="py-16 bg-gray-50">
         <div className="container-custom">
-          <div className="flex items-center justify-center space-x-4 mb-12">
-            <span className={`text-lg ${billingCycle === 'monthly' ? 'text-reelred font-medium' : 'text-gray-500'}`}>
-              Monthly
-            </span>
-            <div className="flex items-center">
-              <Switch
-                checked={billingCycle === 'annual'}
-                onCheckedChange={toggleBillingCycle}
-                className="data-[state=checked]:bg-reelred"
-              />
-            </div>
-            <div className="flex items-center">
-              <span className={`text-lg ${billingCycle === 'annual' ? 'text-reelred font-medium' : 'text-gray-500'}`}>
-                Annual
-              </span>
-              <span className="ml-2 bg-reelred/10 text-reelred text-xs font-medium px-2 py-1 rounded-full">
-                Save 10%
-              </span>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your ReelFace Package</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Select the perfect package to elevate your brand's presence with professional reel content
+            </p>
           </div>
 
           {/* Pricing Cards */}
@@ -285,12 +304,14 @@ const Pricing = () => {
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <p className="opacity-90 mb-4">{plan.description}</p>
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-bold">₹{billingCycle === 'monthly' ? plan.monthlyPrice : Math.round(plan.annualPrice / 12)}</span>
-                    <span className="ml-2 opacity-80">/month</span>
+                    <span className="text-4xl font-bold">₹{plan.monthlyPrice.toLocaleString()}</span>
+                    <span className="ml-2 opacity-80">
+                      {plan.isOneTime ? '' : plan.isStarting ? ' starting' : '/month'}
+                    </span>
                   </div>
-                  {billingCycle === 'annual' && (
+                  {plan.isOneTime && (
                     <p className="text-sm mt-1 opacity-80">
-                      ₹{plan.annualPrice} billed annually
+                      One-time payment
                     </p>
                   )}
                 </div>
@@ -308,25 +329,71 @@ const Pricing = () => {
                     </ul>
                   </div>
 
-                  {plan.notIncluded.length > 0 && (
-                    <div className="mb-6">
-                      <h4 className="font-medium text-gray-900 mb-4">Not included:</h4>
-                      <ul className="space-y-3">
-                        {plan.notIncluded.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="h-5 w-5 border border-gray-300 rounded-full mr-3 shrink-0 mt-0.5" />
-                            <span className="text-gray-500">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+
 
                   <Link
                     to={plan.name === "Enterprise" ? "/contact" : "/contact"}
                     className={`w-full button-primary justify-center ${
                       plan.popular ? 'bg-gradient-to-r from-reelred to-reelblack' : ''
                     }`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Additional Services</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Specialized services to complement your content creation needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {additionalPlans.map((plan, index) => (
+              <div
+                key={index}
+                className="relative bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl"
+              >
+                <div className={`bg-gradient-to-br ${plan.color} p-6 text-white`}>
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <p className="opacity-90 mb-4">{plan.description}</p>
+                  <div className="flex items-baseline">
+                    <span className="text-4xl font-bold">₹{plan.monthlyPrice.toLocaleString()}</span>
+                    <span className="ml-2 opacity-80">
+                      {plan.isMonthly ? '/month' : plan.isStarting ? ' starting' : ''}
+                    </span>
+                  </div>
+                  {plan.isMonthly && (
+                    <p className="text-sm mt-1 opacity-80">
+                      Monthly subscription
+                    </p>
+                  )}
+                </div>
+
+                <div className="p-6">
+                  <div className="mb-6">
+                    <ul className="space-y-3">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <Check className="h-5 w-5 text-green-500 mr-3 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    to="/contact"
+                    className="w-full bg-reelred hover:bg-reelred/90 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
                   >
                     {plan.cta}
                     <ArrowRight className="ml-2 h-5 w-5" />

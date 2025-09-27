@@ -7,7 +7,8 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowUpRight
+  ArrowUpRight,
+  MessageCircle
 } from 'lucide-react';
 import Logo from '@/components/Logo';
 
@@ -20,15 +21,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="mb-6">
+            <div className="mb-6 p-3 bg-white/10 backdrop-blur-sm rounded-lg inline-block">
               <Logo size="md" />
             </div>
             <p className="text-gray-300 mb-6">
-              Helping individuals and businesses create compelling video content and tell their stories through innovative video production and content creation solutions.
+              We help individuals and businesses tell their stories with compelling video production and creative content solutions.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/reelface/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-gradient-to-r hover:from-reelred-500/80 hover:to-reelblack-800/80 transition-all duration-300"
@@ -37,7 +38,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/thereelface?s=21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-gradient-to-r hover:from-reelred-500/80 hover:to-reelblack-800/80 transition-all duration-300"
@@ -46,13 +47,25 @@ const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1Z1fbt9yPf/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 p-2 rounded-full hover:bg-gradient-to-r hover:from-reelred-500/80 hover:to-reelblack-800/80 transition-all duration-300"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/thereelface?igsh=MTJtMWhsM2Z1YjUyag%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/10 p-2 rounded-full hover:bg-gradient-to-r hover:from-reelred-500/80 hover:to-reelblack-800/80 transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12.017 0C8.396 0 7.929.01 6.71.048 5.493.087 4.73.222 4.058.42a5.916 5.916 0 0 0-2.134 1.384A5.916 5.916 0 0 0 .54 4.038C.222 4.73.087 5.493.048 6.71.01 7.929 0 8.396 0 12.017c0 3.624.01 4.09.048 5.303.039 1.217.174 1.98.372 2.652a5.916 5.916 0 0 0 1.384 2.134 5.916 5.916 0 0 0 2.134 1.384c.672.198 1.435.333 2.652.372 1.216.039 1.683.048 5.303.048 3.624 0 4.09-.01 5.303-.048 1.217-.039 1.98-.174 2.652-.372a5.916 5.916 0 0 0 2.134-1.384 5.916 5.916 0 0 0 1.384-2.134c.198-.672.333-1.435.372-2.652.039-1.216.048-1.683.048-5.303 0-3.624-.01-4.09-.048-5.303-.039-1.217-.174-1.98-.372-2.652A5.916 5.916 0 0 0 19.778 1.92 5.916 5.916 0 0 0 17.644.536C16.972.222 16.209.087 14.992.048 13.773.01 13.306 0 9.683 0h2.334zm-.081 1.802h.089c3.563 0 3.983.01 5.39.048 1.3.06 2.006.272 2.477.45a4.114 4.114 0 0 1 1.526.994 4.114 4.114 0 0 1 .994 1.526c.178.471.39 1.177.45 2.477.038 1.407.048 1.827.048 5.39 0 3.563-.01 3.983-.048 5.39-.06 1.3-.272 2.006-.45 2.477a4.114 4.114 0 0 1-.994 1.526 4.114 4.114 0 0 1-1.526.994c-.471.178-1.177.39-2.477.45-1.407.038-1.827.048-5.39.048-3.563 0-3.983-.01-5.39-.048-1.3-.06-2.006-.272-2.477-.45a4.114 4.114 0 0 1-1.526-.994 4.114 4.114 0 0 1-.994-1.526c-.178-.471-.39-1.177-.45-2.477-.038-1.407-.048-1.827-.048-5.39 0-3.563.01-3.983.048-5.39.06-1.3.272-2.006.45-2.477a4.114 4.114 0 0 1 .994-1.526A4.114 4.114 0 0 1 4.11 2.252c.471-.178 1.177-.39 2.477-.45 1.407-.038 1.827-.048 5.39-.048z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M12.017 5.838a6.179 6.179 0 1 0 0 12.358 6.179 6.179 0 0 0 0-12.358zM12.017 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.624-10.845a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z" clipRule="evenodd" />
+                </svg>
               </a>
             </div>
           </div>
@@ -63,11 +76,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: 'Home', path: '/' },
-                { name: 'About Us', path: '/about' },
                 { name: 'Services', path: '/services' },
-                { name: 'Our Solutions', path: '/product' },
                 { name: 'Pricing', path: '/pricing' },
-                { name: 'Blog', path: '/blog' },
                 { name: 'Community', path: '/community' },
                 { name: 'Contact', path: '/contact' }
               ].map(({ name, path }) => (
@@ -84,29 +94,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Services</h3>
-            <ul className="space-y-3">
-              {[
-                'Security Assessments',
-                'Digital Wellness Programs',
-                'Cybersecurity Training',
-                'Tech Balance Solutions',
-                'Security Monitoring'
-              ].map((service) => (
-                <li key={service}>
-                  <NavLink
-                    to="/services"
-                    className="text-gray-300 hover:text-white transition-colors flex items-center"
-                  >
-                    <ArrowUpRight className="h-3 w-3 mr-2" />
-                    {service}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+          
 
           {/* Contact Info */}
           <div>
@@ -117,31 +105,33 @@ const Footer = () => {
                   <MapPin className="h-4 w-4 text-reelred-400" />
                 </div>
                 <span className="text-gray-300">
-                  456 Media Boulevard<br />
-                  Creative District, Los Angeles<br />
-                  CA 90028, USA
+                  Hyderabad, Telangana<br />
+                  India
                 </span>
               </li>
+             
               <li className="flex items-center">
                 <div className="bg-white/10 p-2 rounded-full mr-3 shrink-0">
-                  <Phone className="h-4 w-4 text-reelwhite-400" />
+                  <MessageCircle className="h-4 w-4 text-reelred-400" />
                 </div>
                 <a
-                  href="tel:+11234567890"
+                  href="https://wa.me/919949292553"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  +1 (323) 555-REEL
+                  WhatsApp: +91 9949292553
                 </a>
               </li>
               <li className="flex items-center">
                 <div className="bg-white/10 p-2 rounded-full mr-3 shrink-0">
-                  <Mail className="h-4 w-4 text-reelblack-400" />
+                  <Mail className="h-4 w-4 text-reelred-400" />
                 </div>
                 <a
-                  href="mailto:info@reelface.com"
+                  href="mailto:thereelface@gmail.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  info@reelface.com
+                  thereelface@gmail.com
                 </a>
               </li>
             </ul>
