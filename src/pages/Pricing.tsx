@@ -98,6 +98,24 @@ const Pricing = () => {
       color: "from-green-500/70 to-green-300/20"
     },
     {
+      name: "Reelface",
+      description: "Perfect for brands and professionals seeking consistent reel-based content.",
+      monthlyPrice: 6999,
+      annualPrice: 69990, // One-time payment
+      isOneTime: true,
+      features: [
+        "1 Professional reel shoot",
+        "30 days exclusivity",
+        "Script, shooting, and editing support",
+        "Brand-aligned wardrobe & styling",
+        "Strategy call to refine your message"
+      ],
+
+      cta: "Book now",
+      popular: false,
+      color: "from-blue-500/70 to-blue-300/20"
+    },
+    {
       name: "FaceLift",
       description: "Your first step into the spotlight.",
       monthlyPrice: 29999,
@@ -286,7 +304,7 @@ const Pricing = () => {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
@@ -381,10 +399,11 @@ const Pricing = () => {
 
                 <div className="p-6">
                   <div className="mb-6">
+                    <h4 className="font-medium text-gray-900 mb-4">What's included:</h4>
                     <ul className="space-y-3">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <Check className="h-5 w-5 text-green-500 mr-3 shrink-0 mt-0.5" />
+                          <Check className="h-5 w-5 text-reelred mr-3 shrink-0 mt-0.5" />
                           <span className="text-gray-700">{feature}</span>
                         </li>
                       ))}
@@ -392,8 +411,8 @@ const Pricing = () => {
                   </div>
 
                   <Link
-                    to="/contact"
-                    className="w-full bg-reelred hover:bg-reelred/90 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+                    to={plan.cta === "Contact us" ? "/contact" : "/contact"}
+                    className="w-full button-primary justify-center"
                   >
                     {plan.cta}
                     <ArrowRight className="ml-2 h-5 w-5" />

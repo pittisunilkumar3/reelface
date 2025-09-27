@@ -78,7 +78,7 @@ const ServicesPage = () => {
       id: "brand-face-reels",
       title: "Exclusive Brand Face for Reels",
       description: "Stand out on social media with a unique brand face designed exclusively for your reels, creating authentic connections with your audience.",
-      image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&q=80&w=1000",
       features: [
         "Custom brand personality development",
         "Exclusive talent casting and selection",
