@@ -339,9 +339,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg">Office</h3>
                     <address className="text-gray-600 not-italic">
-                      123 AI Boulevard<br />
-                      Tech District, Innovation City<br />
-                      CA 94105, USA
+                      Hyderabad, Telangana<br />
                     </address>
                   </div>
                 </div>

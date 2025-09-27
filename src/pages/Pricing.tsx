@@ -80,24 +80,6 @@ const Pricing = () => {
 
   const pricingPlans = [
     {
-      name: "Face starter",
-      description: "The simplest way to step into the spotlight with ReelFace.",
-      monthlyPrice: 19999,
-      annualPrice: 199990, // One-time payment
-      isOneTime: true,
-      features: [
-        "📱 5 Reels + 1 collab reel",
-        "✂️ Clean, professional edits",
-        "🔍 Basic research",
-        "📊 Performance insights",
-        "reelface Branding Included"
-      ],
-
-      cta: "Book now",
-      popular: false,
-      color: "from-green-500/70 to-green-300/20"
-    },
-    {
       name: "Reelface",
       description: "Perfect for brands and professionals seeking consistent reel-based content.",
       monthlyPrice: 6999,
@@ -115,6 +97,25 @@ const Pricing = () => {
       popular: false,
       color: "from-blue-500/70 to-blue-300/20"
     },
+    {
+      name: "Face starter",
+      description: "The simplest way to step into the spotlight with ReelFace.",
+      monthlyPrice: 19999,
+      annualPrice: 199990, // One-time payment
+      isOneTime: true,
+      features: [
+        "📱 5 Reels + 1 collab reel",
+        "✂️ Clean, professional edits",
+        "🔍 Basic research",
+        "📊 Performance insights",
+        "reelface Branding Included"
+      ],
+
+      cta: "Book now",
+      popular: false,
+      color: "from-green-500/70 to-green-300/20"
+    },
+    
     {
       name: "FaceLift",
       description: "Your first step into the spotlight.",
