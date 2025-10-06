@@ -97,25 +97,7 @@ const Pricing = () => {
       popular: false,
       color: "from-blue-500/70 to-blue-300/20"
     },
-    {
-      name: "Face starter",
-      description: "The simplest way to step into the spotlight with ReelFace.",
-      monthlyPrice: 19999,
-      annualPrice: 199990, // One-time payment
-      isOneTime: true,
-      features: [
-        "📱 5 Reels + 1 collab reel",
-        "✂️ Clean, professional edits",
-        "🔍 Basic research",
-        "📊 Performance insights",
-        "reelface Branding Included"
-      ],
 
-      
-      cta: "Book now",
-      popular: false,
-      color: "from-green-500/70 to-green-300/20"
-    },
     
     {
       name: "FaceLift",
@@ -324,11 +306,11 @@ const Pricing = () => {
           </div>
 
           {/* Enhanced Pricing Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-8xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
             {pricingPlans.map((plan, index) => (
               <FloatingElement key={index} delay={0.4 + index * 0.1}>
                 <div
-                  className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
+                  className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col w-full max-w-sm ${
                     plan.popular ? 'ring-2 ring-reelred scale-105 lg:scale-110' : ''
                   } border border-white/20`}
                 >
@@ -344,22 +326,22 @@ const Pricing = () => {
                   )}
 
                   {/* Header with gradient */}
-                  <div className={`relative bg-gradient-to-br ${plan.color} p-8 text-white overflow-hidden`}>
+                  <div className={`relative bg-gradient-to-br ${plan.color} p-6 text-white overflow-hidden`}>
                     {/* Decorative elements */}
                     <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/10 -translate-y-16 translate-x-16"></div>
                     <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-white/5 translate-y-12 -translate-x-12"></div>
 
                     <div className="relative z-10">
-                      <h3 className="text-2xl font-bold mb-3 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
-                      <p className="opacity-90 mb-6 text-sm leading-relaxed">{plan.description}</p>
+                      <h3 className="text-xl font-bold mb-3 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
+                      <p className="opacity-90 mb-4 text-sm leading-relaxed min-h-[3rem]">{plan.description}</p>
 
                       {/* Price with animation */}
                       <div className="flex items-baseline mb-2">
-                        <span className="text-5xl font-black group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
                           ₹{plan.monthlyPrice.toLocaleString()}
                         </span>
                         <span className="ml-2 opacity-80 text-sm">
-                          {plan.isOneTime ? '' : plan.isStarting ? ' starting' : '/month'}
+                          /month
                         </span>
                       </div>
                       {plan.isOneTime && (
@@ -371,10 +353,10 @@ const Pricing = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="relative p-8">
-                    <div className="mb-8">
-                      <h4 className="font-bold text-gray-900 mb-6 text-lg">What's included:</h4>
-                      <ul className="space-y-4">
+                  <div className="relative p-6 flex-grow flex flex-col">
+                    <div className="mb-6 flex-grow">
+                      <h4 className="font-bold text-gray-900 mb-4 text-base">What's included:</h4>
+                      <ul className="space-y-3">
                         {plan.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start group/item">
                             <div className="bg-gradient-to-r from-reelred to-reelblack p-1 rounded-full mr-3 shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform duration-300">
@@ -389,11 +371,11 @@ const Pricing = () => {
                     {/* CTA Button */}
                     <Link
                       to="/contact"
-                      className={`w-full group/btn relative overflow-hidden rounded-xl py-4 px-6 font-bold text-center transition-all duration-300 transform hover:scale-105 ${
+                      className={`w-full group/btn relative overflow-hidden rounded-xl py-3 px-6 font-semibold text-center transition-all duration-300 transform hover:scale-105 ${
                         plan.popular
                           ? 'bg-gradient-to-r from-reelred to-reelblack text-white shadow-lg hover:shadow-xl'
                           : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 hover:from-reelred hover:to-reelblack hover:text-white'
-                      } flex items-center justify-center`}
+                      } flex items-center justify-center mt-auto`}
                     >
                       <span className="relative z-10 flex items-center">
                         {plan.cta}

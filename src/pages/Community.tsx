@@ -261,13 +261,15 @@ const Community = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link
-                  to="#join-community"
+                <a
+                  href="https://chat.whatsapp.com/KIaRR5i9f9e2bdT5JArxPm"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl group flex items-center"
                 >
                   🚀 Join Our Community
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
                 <Link
                   to="#community-features"
                   className="bg-white/15 hover:bg-white/25 backdrop-blur-sm border border-white/20 transition-all text-white font-semibold py-4 px-8 rounded-full inline-flex items-center hover:shadow-lg transform hover:-translate-y-1"
@@ -390,7 +392,7 @@ const Community = () => {
                 <div className="relative h-48 overflow-hidden">
                   <LazyImage
                     src={getOptimizedImageUrl(`https://images.unsplash.com/photo-${
-                      index === 0 ? '1611162617474-5b21e879e113' :
+                      index === 0 ? '1560472354-b33ff0c44a43' :
                       index === 1 ? '1522071820081-009f0129c71c' :
                       index === 2 ? '1513475382585-d06e58bcb0e0' :
                       index === 3 ? '1600880292203-757bb62b4baf' :
@@ -594,13 +596,15 @@ const Community = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Join thousands of creators who are already part of our amazing community. It's completely free and takes less than 2 minutes!
             </p>
-            <Link
-              to="/contact"
+            <a
+              href="https://chat.whatsapp.com/KIaRR5i9f9e2bdT5JArxPm"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-orange-500 via-purple-500 to-green-500 hover:from-orange-600 hover:via-purple-600 hover:to-green-600 text-white font-bold py-4 px-8 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               🌟 Join Our Community - It's Free!
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -625,13 +629,15 @@ const Community = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Link
-                to="/contact"
+              <a
+                href="https://chat.whatsapp.com/KIaRR5i9f9e2bdT5JArxPm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white hover:bg-gray-100 text-gray-800 font-bold py-4 px-8 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-xl inline-flex items-center"
               >
                 🚀 Start Your Journey Today
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
               <div className="text-white/80 text-sm">
                 ✨ 100% Free • No Credit Card Required • Join in 2 Minutes
               </div>
