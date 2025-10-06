@@ -340,13 +340,11 @@ const Pricing = () => {
                         <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
                           ₹{plan.monthlyPrice.toLocaleString()}
                         </span>
-                        <span className="ml-2 opacity-80 text-sm">
-                          /month
-                        </span>
+                        
                       </div>
                       {plan.isOneTime && (
                         <p className="text-sm opacity-80 bg-white/20 rounded-full px-3 py-1 inline-block">
-                          One-time payment
+                          Monthly subscription
                         </p>
                       )}
                     </div>
@@ -440,9 +438,7 @@ const Pricing = () => {
                   <p className="opacity-90 mb-4">{plan.description}</p>
                   <div className="flex items-baseline">
                     <span className="text-4xl font-bold">₹{plan.monthlyPrice.toLocaleString()}</span>
-                    <span className="ml-2 opacity-80">
-                      {plan.isMonthly ? '/month' : plan.isStarting ? ' starting' : ''}
-                    </span>
+                    
                   </div>
                   {plan.isMonthly && (
                     <p className="text-sm mt-1 opacity-80">
