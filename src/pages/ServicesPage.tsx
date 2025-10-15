@@ -182,13 +182,15 @@ const ServicesPage = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Link
-                to="/contact"
+              <a
+                href="https://forms.gle/zwwrgsCvt92jUtz19"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="button-primary bg-white text-reelred hover:bg-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-lg group"
               >
                 Become a Face Partner Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
               <a
                 href="#how-it-works"
                 className="bg-white/10 hover:bg-white/20 transition-all text-white font-semibold py-3 px-6 rounded-md inline-flex items-center hover:shadow-lg"
@@ -342,13 +344,15 @@ const ServicesPage = () => {
             <p className="text-lg opacity-90 mb-8 italic">
               "Your profile. Your reach. Your influence — powered by Reelface."
             </p>
-            <Link 
-              to="/contact" 
+            <a 
+              href="https://forms.gle/zwwrgsCvt92jUtz19"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button-primary bg-white hover:bg-gray-100 text-reelred text-lg px-8 py-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               👉 Become a Face Partner Now
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
