@@ -81,8 +81,8 @@ const Pricing = () => {
   const pricingPlans = [
     {
       name: "Reelface",
-      description: "Perfect for brands and professionals seeking consistent reel-based content.",
-      monthlyPrice: 6999,
+      description: "Your Brand. Your Story. Our Face to the World.",
+      monthlyPrice: 10999,
       annualPrice: 69990, // One-time payment
       isOneTime: true,
       features: [
