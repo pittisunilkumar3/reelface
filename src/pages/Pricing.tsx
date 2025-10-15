@@ -362,7 +362,7 @@ const Pricing = () => {
                       </div>
                       {plan.isOneTime && (
                         <p className="text-sm opacity-80 bg-white/20 rounded-full px-3 py-1 inline-block">
-                          {plan.name === "Credit Face" ? "1 credit equal to one short vedio" : "My face ad for your brand"}
+                          {plan.name === "Credit Face" ? "1 credit equal to one short video" : "My face ad for your brand"}
                         </p>
                       )}
                     </div>
