@@ -60,7 +60,7 @@ const Hero = () => {
   // ];
 
   const typingTexts = [
-    " I become the face of your brand"
+    "Let's get the face for your brand"
   ];
   const features = [
     {
