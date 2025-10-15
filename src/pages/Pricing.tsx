@@ -81,16 +81,17 @@ const Pricing = () => {
   const pricingPlans = [
     {
       name: "Reelface",
-      description: "Your Brand. Your Story. Our Face to the World.",
-      monthlyPrice: 10999,
+      description: "Your Brand. Your Story. Our Face to the World.",
+      monthlyPrice: 9999,
       annualPrice: 69990, // One-time payment
       isOneTime: true,
       features: [
-        "1 Professional reel shoot",
-        "30 days exclusivity",
+        "1 professional brand Ad shoot",
+        "collab accepted (Optional)",
         "Script, shooting, and editing support",
         "Brand-aligned wardrobe & styling",
-        "Strategy call to refine your message"
+        "Strategy call to refine your message",
+        "Branding promotion"
       ],
 
       cta: "Book now",
@@ -100,17 +101,32 @@ const Pricing = () => {
 
     
     {
-      name: "FaceLift",
+      name: "Credit Face",
       description: "Your first step into the spotlight.",
-      monthlyPrice: 29999,
+      monthlyPrice: 4000,
       annualPrice: 299990, // One-time payment
       isOneTime: true,
       features: [
-        "📱 8 Reels + 1 collab reel",
-        "✂️ Scroll-stopping edits",
-        "🔍 Trend research",
-        "🎯 Spotlight Boost",
-        "reelface Branding Included"
+        "Your face",
+        "Personalized Branding",
+        "Content Research",
+        "Content Strategy",
+        "Script Writing",
+        "Video Production",
+        "Video Editing",
+        "Graphic Designing",
+        "Template Creation",
+        "Reel Optimization",
+        "Thumbnail Design",
+        "Voiceovers & Subtitles",
+        "SEO for Content",
+        "Platform Strategy",
+        "Campaign Planning",
+        "Audience Engagement",
+        "Analytics & Reporting",
+        "Trend Monitoring",
+        "Brand Storytelling",
+        "Account Manager"
       ],
 
       cta: "Book now",
@@ -344,7 +360,7 @@ const Pricing = () => {
                       </div>
                       {plan.isOneTime && (
                         <p className="text-sm opacity-80 bg-white/20 rounded-full px-3 py-1 inline-block">
-                          Monthly subscription
+                          {plan.name === "Credit Face" ? "1 credit equal to one short vedio" : "My face ad for your brand"}
                         </p>
                       )}
                     </div>
