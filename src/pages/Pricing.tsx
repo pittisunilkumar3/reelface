@@ -102,8 +102,8 @@ const Pricing = () => {
     
     {
       name: "Credit Face",
-      description: "Your first step into the spotlight.",
-      monthlyPrice: 4000,
+      description: "Perfect for brands and professionals seeking consistent reel-based content.",
+      monthlyPrice: 3999,
       annualPrice: 299990, // One-time payment
       isOneTime: true,
       features: [
@@ -134,21 +134,37 @@ const Pricing = () => {
       color: "from-reelred/70 to-reelred/20"
     },
     {
-      name: "FaceEmpire",
+      name: "Crowd Face",
       description: "Turn your brand into a conversation everyone's having.",
-      monthlyPrice: 39999,
-      annualPrice: 399990, // One-time payment
-      isOneTime: true,
+      monthlyPrice: null,
+      annualPrice: null,
+      isContactUs: true,
       features: [
-        "📱 12 Reels + 1 collab reel",
-        "🔄 Edits that keep content in the loop",
-        "🔍 Deep trend & audience research",
-        "📊 Monthly performance insights",
-        "🎯 Visibility Push",
-        "reelface Branding Included"
+        "Your face. Multiple accounts",
+        "One brand",
+        "Personalized Branding",
+        "Content Research",
+        "Content Strategy",
+        "Script Writing",
+        "Video Production",
+        "Video Editing",
+        "Graphic Designing",
+        "Template Creation",
+        "Reel Optimization",
+        "Thumbnail Design",
+        "Voiceovers & Subtitles",
+        "SEO for Content",
+        "Platform Strategy",
+        "Campaign Planning",
+        "Audience Engagement",
+        "Analytics & Reporting",
+        "Trend Monitoring",
+        "Brand Storytelling",
+        "Account Manager",
+        "Dedicated Team"
       ],
 
-      cta: "Book now",
+      cta: "Contact us",
       popular: false,
       color: "from-yellow-500/70 to-yellow-300/20"
     }
@@ -157,28 +173,9 @@ const Pricing = () => {
   // Additional service plans
   const additionalPlans = [
     {
-      name: "Personal Branding Services",
-      description: "Comprehensive package for professionals to establish and grow their personal brand",
-      monthlyPrice: 99999,
-      annualPrice: 1199988, // Monthly subscription
-      isMonthly: true,
-      features: [
-        "Cinematic trailer introducing your expertise",
-        "8 short reels tailored to your niche",
-        "4 professional photoshoot edits",
-        "Interview or podcast shoot",
-        "2–3 instant reels cut from long videos",
-        "Speaking session opportunities (events/workshops)",
-        "Personal website or portfolio design",
-        "2–3 micro-influencer collaborations to boost reach"
-      ],
-      cta: "Contact us",
-      color: "from-purple-500/70 to-purple-300/20"
-    },
-    {
       name: "Face edits",
       description: "Short-form video editing only",
-      monthlyPrice: 999,
+      monthlyPrice: 699,
       annualPrice: 9990, // One-time payment
       isOneTime: true,
       features: [
@@ -192,7 +189,7 @@ const Pricing = () => {
     {
       name: "Video Production",
       description: "Professional video production services",
-      monthlyPrice: 4999,
+      monthlyPrice: 1999,
       annualPrice: 49990, // Starting price
       isStarting: true,
       features: [
@@ -353,10 +350,15 @@ const Pricing = () => {
 
                       {/* Price with animation */}
                       <div className="flex items-baseline mb-2">
-                        <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
-                          ₹{plan.monthlyPrice.toLocaleString()}
-                        </span>
-                        
+                        {plan.isContactUs ? (
+                          <span className="text-3xl font-black group-hover:scale-110 transition-transform duration-300">
+                          Growth Pack
+                          </span>
+                        ) : (
+                          <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
+                            ₹{plan.monthlyPrice.toLocaleString()}
+                          </span>
+                        )}
                       </div>
                       {plan.isOneTime && (
                         <p className="text-sm opacity-80 bg-white/20 rounded-full px-3 py-1 inline-block">
@@ -443,11 +445,11 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
             {additionalPlans.map((plan, index) => (
               <div
                 key={index}
-                className="relative bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl"
+                className="relative bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl w-full max-w-sm"
               >
                 <div className={`bg-gradient-to-br ${plan.color} p-6 text-white`}>
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
@@ -456,11 +458,6 @@ const Pricing = () => {
                     <span className="text-4xl font-bold">₹{plan.monthlyPrice.toLocaleString()}</span>
                     
                   </div>
-                  {plan.isMonthly && (
-                    <p className="text-sm mt-1 opacity-80">
-                      Monthly subscription
-                    </p>
-                  )}
                 </div>
 
                 <div className="p-6">
