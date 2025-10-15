@@ -1,14 +1,11 @@
-
 import { useState, useEffect, useRef } from 'react';
 import {
   ArrowRight, CheckCircle, ChevronDown, Zap, Shield,
-  Globe, Layers, Sparkles, Camera, Film, Mic,
-  User, Scissors, FileText, Star, Video
+  Globe, Users, Sparkles, Camera, Film, Trophy,
+  User, Gift, Star, TrendingUp, Target, Heart
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
-import LazyImage from '@/components/LazyImage';
-import { getOptimizedImageUrl } from '@/utils/imageOptimization';
 import HexagonNetwork from '@/components/HexagonNetwork';
 
 // Animated counter component
@@ -73,107 +70,83 @@ const FloatingElement = ({ children, delay = 0, className = "" }) => {
 };
 
 const ServicesPage = () => {
-  const services = [
+  const howItWorks = [
     {
-      id: "brand-face-reels",
-      title: "Exclusive Brand Face for Reels",
-      description: "Stand out on social media with a unique brand face designed exclusively for your reels, creating authentic connections with your audience.",
-      image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Custom brand personality development",
-        "Exclusive talent casting and selection",
-        "Brand voice and messaging alignment",
-        "Social media optimization strategies",
-        "Consistent visual identity across platforms"
-      ]
+      step: "1",
+      title: "Apply to Become a Face",
+      description: "Submit your Instagram handle and follower details.",
+      icon: <User className="h-8 w-8" />
     },
     {
-      id: "professional-reel-shoots",
-      title: "Professional Reel Shoots",
-      description: "High-quality reel production tailored to enhance your online presence and engagement with professional cinematography.",
-      image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Professional video production equipment",
-        "Creative direction and storytelling",
-        "Multiple format optimization (Instagram, TikTok, YouTube)",
-        "On-location and studio shooting options",
-        "Post-production editing and color grading"
-      ]
+      step: "2",
+      title: "Get Matched with Brands",
+      description: "We connect you with brands that fit your niche — from food and fashion to startups and lifestyle.",
+      icon: <Target className="h-8 w-8" />
     },
     {
-      id: "script-content-strategy",
-      title: "Script Planning & Content Strategy",
-      description: "Comprehensive script writing and content strategy development to align with your brand goals and audience engagement.",
-      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Strategic content planning and calendar",
-        "Engaging script writing and storytelling",
-        "Audience research and targeting",
-        "Brand messaging consistency",
-        "Performance tracking and optimization"
-      ]
+      step: "3",
+      title: "Promote Brand Videos",
+      description: "Brands send you their videos and captions — you post them on your feed or stories.",
+      icon: <Film className="h-8 w-8" />
     },
     {
-      id: "photoshoots-video-trailers",
-      title: "Professional Photoshoots & Video Trailers",
-      description: "Creative photoshoots and cinematic video trailers to highlight your brand, products, and services with stunning visuals.",
-      image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Professional photography and cinematography",
-        "Creative concept development",
-        "Product and lifestyle photography",
-        "Cinematic trailer production",
-        "Brand storytelling through visuals"
-      ]
+      step: "4",
+      title: "Earn Rewards & Grow",
+      description: "Get rewarded through cash, free products, food, or exclusive brand experiences — depending on the campaign.",
+      icon: <Gift className="h-8 w-8" />
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Regular brand collaborations"
     },
     {
-      id: "podcast-interview-production",
-      title: "Podcast & Interview Production",
-      description: "Full-service podcast and interview production to share your voice and expertise with the world through professional audio-visual content.",
-      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Professional audio recording and mixing",
-        "Video podcast production",
-        "Interview preparation and coaching",
-        "Multi-platform distribution strategy",
-        "Show notes and content repurposing"
-      ]
+      icon: <Gift className="h-6 w-6" />,
+      title: "Free products and exclusive experiences"
     },
     {
-      id: "personal-branding",
-      title: "Personal Branding for Professionals",
-      description: "Tailored personal branding strategies to help professionals build a strong online identity and establish thought leadership.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Personal brand strategy development",
-        "Professional headshots and portraits",
-        "LinkedIn and social media optimization",
-        "Thought leadership content creation",
-        "Online reputation management"
-      ]
+      icon: <Star className="h-6 w-6" />,
+      title: "Visibility through Reelface creator features"
     },
     {
-      id: "professional-editing",
-      title: "Professional Editing Services",
-      description: "Expert editing for videos, photos, and audio content to deliver polished and professional results that captivate your audience.",
-      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1000",
-      features: [
-        "Advanced video editing and post-production",
-        "Color correction and grading",
-        "Audio mixing and sound design",
-        "Motion graphics and visual effects",
-        "Multi-format delivery optimization"
-      ]
+      icon: <Trophy className="h-6 w-6" />,
+      title: "Access to the Top 100 Face Partners community"
+    },
+    {
+      icon: <TrendingUp className="h-6 w-6" />,
+      title: "Growth and exposure as a micro-influencer"
+    }
+  ];
+
+  const whyBrandsChoose = [
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "One brand video → Hundreds of real faces promoting it"
+    },
+    {
+      icon: <Heart className="h-6 w-6" />,
+      title: "Authentic organic reach through real profiles"
+    },
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "Cost-effective alternative to influencer ads"
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Builds strong brand trust and visibility"
     }
   ];
 
   return (
     <div className="min-h-screen">
       <SEO
-        title="Our Services - Professional Video Production & Content Creation"
-        description="Comprehensive video production and content creation services including brand face for reels, professional shoots, content strategy, and personal branding."
+        title="Become a Face - Join the Reelface Creator Network"
+        description="Join the Reelface Creator Network. Real People. Real Reach. Real Impact. Turn your social media influence into opportunity with brand collaborations."
       />
-      {/* Services Hero Section */}
+      
+      {/* Hero Section */}
       <section className="bg-gradient-to-r from-reelred to-reelblack text-white py-20 md:py-28 relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -188,138 +161,41 @@ const ServicesPage = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium mb-6 animate-pulse-slow">
-                <span className="mr-2 bg-white text-reelred p-1 rounded-full">
-                  <Sparkles className="h-3 w-3" />
-                </span>
-                End-to-End Solutions
-              </div>
-
-              <h1 className="heading-xl mb-6 relative">
-                <span className="relative inline-block">
-                  <span className="relative z-10">Our Services</span>
-                  <span className="absolute -bottom-2 left-0 w-full h-3 bg-reelred/30 rounded-full -z-10 transform -rotate-1"></span>
-                </span>
-              </h1>
-
-              <p className="text-xl text-white/90 mb-8 max-w-2xl">
-                We offer a comprehensive range of video production and content creation solutions to help businesses tell their stories, engage audiences, and gain competitive advantage in today's digital landscape.
-              </p>
-
-              {/* Service category badges */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                {[
-                  { icon: <Sparkles className="h-4 w-4" />, text: "Brand Face" },
-                  { icon: <Globe className="h-4 w-4" />, text: "Content Creation" },
-                  { icon: <Shield className="h-4 w-4" />, text: "Professional Quality" },
-                  { icon: <Zap className="h-4 w-4" />, text: "Fast Delivery" }
-                ].map((badge, index) => (
-                  <div
-                    key={index}
-                    className="inline-flex items-center bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium transform transition-all duration-300 hover:scale-105 hover:bg-white/20"
-                  >
-                    <span className="mr-1.5 text-white">{badge.icon}</span>
-                    {badge.text}
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/contact"
-                  className="button-primary bg-white text-reelred hover:bg-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-lg group"
-                >
-                  Request a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="#services-list"
-                  className="bg-white/10 hover:bg-white/20 transition-all text-white font-semibold py-3 px-6 rounded-md inline-flex items-center hover:shadow-lg transform hover:-translate-y-1"
-                >
-                  Explore Services
-                  <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
-                </Link>
-              </div>
-
-              {/* Service stats */}
-              <div className="grid grid-cols-3 gap-4 mt-12">
-                {[
-                  { value: 7, label: "Service Categories", icon: <Layers className="h-5 w-5" /> },
-                  { value: 50, label: "Projects Completed", icon: <Sparkles className="h-5 w-5" /> },
-                  { value: 10, label: "Industries Served", icon: <Globe className="h-5 w-5" /> }
-                ].map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center transform transition-all duration-300 hover:bg-white/15"
-                  >
-                    <div className="flex justify-center mb-1 text-white/80">
-                      {stat.icon}
-                    </div>
-                    <div className="text-2xl font-bold">
-                      <AnimatedCounter end={stat.value} />+
-                    </div>
-                    <p className="text-xs text-white/80">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium mb-6 animate-pulse-slow">
+              <span className="mr-2 bg-white text-reelred p-1 rounded-full">
+                <Film className="h-3 w-3" />
+              </span>
+              Join the Movement
             </div>
 
-            <div className="relative hidden lg:block">
-              <FloatingElement className="relative z-10">
-                <div className="relative">
-                  {/* Decorative background shapes */}
-                  <div className="absolute -top-6 -left-6 w-32 h-32 bg-reelred/20 rounded-full blur-xl"></div>
-                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-reelblack/20 rounded-full blur-xl"></div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 relative">
+              🎬 Become a Face
+            </h1>
+            
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8 opacity-90">
+              Join the Reelface Creator Network
+            </h2>
 
-                  {/* Service icons grid */}
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 relative z-10 shadow-xl border border-white/10">
-                    <div className="grid grid-cols-3 gap-4">
-                      {[
-                        { icon: <Star className="h-8 w-8" />, label: "Brand Face", color: "bg-reelred/20" },
-                        { icon: <Camera className="h-8 w-8" />, label: "Shoots", color: "bg-reelblack/20" },
-                        { icon: <FileText className="h-8 w-8" />, label: "Scripts", color: "bg-reelgray-600/20" },
-                        { icon: <Film className="h-8 w-8" />, label: "Videos", color: "bg-reelblack/20" },
-                        { icon: <Mic className="h-8 w-8" />, label: "Podcasts", color: "bg-reelred/20" },
-                        { icon: <User className="h-8 w-8" />, label: "Branding", color: "bg-reelgray-600/20" },
-                        { icon: <Scissors className="h-8 w-8" />, label: "Editing", color: "bg-reelred/20" },
-                        { icon: <Video className="h-8 w-8" />, label: "Production", color: "bg-reelblack/20" },
-                        { icon: <Globe className="h-8 w-8" />, label: "Digital", color: "bg-reelgray-600/20" }
-                      ].map((item, index) => (
-                        <div
-                          key={index}
-                          className={`${item.color} rounded-xl p-4 flex flex-col items-center justify-center text-white transform transition-all duration-300 hover:scale-105`}
-                          style={{ animationDelay: `${index * 0.1}s` }}
-                        >
-                          {item.icon}
-                          <span className="text-xs mt-2 font-medium">{item.label}</span>
-                        </div>
-                      ))}
-                    </div>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 italic">
+              "Real People. Real Reach. Real Impact."
+            </p>
 
-                    {/* Service highlight */}
-                    <div className="mt-6 bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center">
-                      <div className="bg-reelred/20 p-3 rounded-full mr-4">
-                        <Sparkles className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-white text-lg">End-to-End Solutions</h3>
-                        <p className="text-white/80 text-sm">From concept to delivery and beyond</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating elements */}
-                  <FloatingElement delay={0.7} className="absolute -top-4 -left-4 bg-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-20">
-                    <Camera className="h-6 w-6 text-reelred" />
-                  </FloatingElement>
-
-                  <FloatingElement delay={1.5} className="absolute -bottom-4 -right-4 bg-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center z-20">
-                    <Film className="h-5 w-5 text-reelblack" />
-                  </FloatingElement>
-                </div>
-              </FloatingElement>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <Link
+                to="/contact"
+                className="button-primary bg-white text-reelred hover:bg-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              >
+                Become a Face Partner Now
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a
+                href="#how-it-works"
+                className="bg-white/10 hover:bg-white/20 transition-all text-white font-semibold py-3 px-6 rounded-md inline-flex items-center hover:shadow-lg"
+              >
+                Learn More
+                <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
+              </a>
             </div>
           </div>
         </div>
@@ -331,77 +207,146 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services List */}
-      <section id="services-list" className="section">
+      {/* About the Program */}
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-lg mb-4">Our Video Production Services</h2>
-            <p className="text-gray-600 text-lg">
-              From exclusive brand faces for reels to comprehensive content strategies, we provide end-to-end video production solutions tailored to your brand's unique needs.
-            </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              💡 About the Program
+            </h2>
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p className="text-xl font-semibold text-reelred">
+                Reelface is where real creators meet real brands.
+              </p>
+              <p>
+                If you have <strong>500–10K followers</strong>, you already have influence — and we'll help you turn it into opportunity.
+              </p>
+              <p>
+                In this program, you'll help brands grow by posting their videos on your social media.
+                You don't need to shoot or edit anything — brands will send you ready-to-post content, and you'll simply share it with your audience.
+              </p>
+              <p>
+                Every post builds your credibility as a creator while helping brands reach new people through authentic, real profiles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section id="how-it-works" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ⚙ How It Works
+            </h2>
           </div>
 
-          <div className="space-y-24">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {howItWorks.map((item, index) => (
               <div
-                key={service.id}
-                id={service.id}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                }`}
+                key={index}
+                className="bg-white rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <h2 className="heading-md mb-6">{service.title}</h2>
-                  <p className="text-gray-700 mb-6 text-lg">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-reelred mr-3 shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link to="/contact" className="button-primary">
-                    Discuss Your Project
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                <div className="bg-gradient-to-r from-reelred to-reelblack text-white w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  {item.icon}
                 </div>
-
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-reelred/20 to-reelblack/20 p-4 rounded-xl">
-                    <LazyImage
-                      src={getOptimizedImageUrl(service.image, 1200, 85)}
-                      alt={service.title}
-                      className="rounded-lg shadow-lg w-full h-[300px]"
-                      objectFit="object-cover"
-                    />
-                  </div>
-                  {index % 2 === 0 ? (
-                    <div className="absolute -z-10 -bottom-5 -right-5 w-full h-full bg-reelred/5 rounded-xl"></div>
-                  ) : (
-                    <div className="absolute -z-10 -bottom-5 -left-5 w-full h-full bg-reelblack/5 rounded-xl"></div>
-                  )}
+                <div className="bg-reelred text-white w-10 h-10 rounded-full flex items-center justify-center mb-3 mx-auto font-bold text-lg">
+                  {item.step}
                 </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-center">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section bg-gradient-to-r from-reelred to-reelblack text-white">
+      {/* What You Get */}
+      <section className="py-20 bg-white">
         <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              🌟 What You Get
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-start p-6 bg-gradient-to-r from-gray-50 to-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="bg-gradient-to-r from-reelred to-reelblack text-white p-3 rounded-full mr-4 shrink-0">
+                    {benefit.icon}
+                  </div>
+                  <p className="text-gray-800 font-medium text-lg pt-2">
+                    {benefit.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Brands Choose */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+              🏆 Why Brands Choose Reelface
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {whyBrandsChoose.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="bg-gradient-to-r from-reelred to-reelblack text-white p-3 rounded-full mr-4 shrink-0">
+                    {item.icon}
+                  </div>
+                  <p className="text-gray-800 font-medium text-lg pt-2">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section bg-gradient-to-r from-reelred to-reelblack text-white relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-white/10 blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-pulse-slow animation-delay-1000"></div>
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="heading-lg mb-6">Ready to Get Started?</h2>
-            <p className="text-lg opacity-90 mb-8">
-              Contact us today to discuss how our video production and content creation services can help your business achieve its goals.
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              🔴 Join the Movement
+            </h2>
+            <p className="text-xl mb-4">
+              Be the face that helps brands grow.
             </p>
-            <Link to="/contact" className="button-primary bg-white hover:bg-gray-100 text-reelred">
-              Schedule a Consultation
+            <p className="text-xl mb-8">
+              Be part of the future of crowd-based content marketing.
+            </p>
+            <p className="text-lg opacity-90 mb-8 italic">
+              "Your profile. Your reach. Your influence — powered by Reelface."
+            </p>
+            <Link 
+              to="/contact" 
+              className="button-primary bg-white hover:bg-gray-100 text-reelred text-lg px-8 py-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              👉 Become a Face Partner Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
