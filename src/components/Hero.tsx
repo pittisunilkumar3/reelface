@@ -178,7 +178,7 @@ const Hero = () => {
               hoverEffect={true}
             >
               <Link
-                to="/services"
+                to="/contact"
                 className="button-primary text-lg px-8 py-4"
               >
                 Book ReelFace <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
