@@ -45,9 +45,6 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
-          <Button className="button-primary">
-            Get Started
-          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -82,9 +79,6 @@ const Navbar = () => {
                 {item.name}
               </NavLink>
             ))}
-            <Button className="button-primary w-full mt-4">
-              Get Started
-            </Button>
           </div>
         </div>
       )}
