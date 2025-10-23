@@ -13,7 +13,7 @@ export const sendEmail = async (data: EmailData): Promise<{ success: boolean; me
   try {
     // Send to admin (thereelface@gmail.com) using Web3Forms
     const formData = new FormData();
-    formData.append('access_key', 'YOUR_ACCESS_KEY_HERE'); // Get free key from https://web3forms.com
+    formData.append('access_key', 'd161e5c5-3baf-401d-8ca4-2215fc01a1c9'); // Get free key from https://web3forms.com
     formData.append('name', data.name);
     formData.append('email', data.email);
     formData.append('subject', `New Contact Form: ${data.subject}`);
