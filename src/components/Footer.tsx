@@ -24,7 +24,7 @@ const Footer = () => {
               <Logo size="md" />
             </div>
             <p className="text-gray-300 mb-6">
-              We help individuals and businesses tell their stories with compelling video production and creative content solutions.
+              Where real people create real impact through Crowd Face Marketing.
             </p>
             <div className="flex space-x-4">
               <a
