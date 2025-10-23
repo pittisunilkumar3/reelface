@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ContactForm from '@/components/ContactForm';
 import {
   Mail, Phone, MapPin, Clock, MessageSquare,
@@ -9,7 +9,6 @@ import {
   HelpCircle, Award, Shield, Zap, Star
 } from 'lucide-react';
 import SEO from '@/components/SEO';
-import { Link } from 'react-router-dom';
 import HexagonNetwork from '@/components/HexagonNetwork';
 import LazyImage from '@/components/LazyImage';
 import { getOptimizedImageUrl } from '@/utils/imageOptimization';
@@ -120,6 +119,18 @@ const FAQSection = () => {
 };
 
 const Contact = () => {
+  // Handle scroll to form when page loads with hash
+  useEffect(() => {
+    if (window.location.hash === '#contact-form') {
+      setTimeout(() => {
+        const formSection = document.getElementById('contact-form');
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -180,13 +191,18 @@ const Contact = () => {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link
-                  to="#contact-form"
+                <button
+                  onClick={() => {
+                    const formSection = document.getElementById('contact-form');
+                    if (formSection) {
+                      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
                   className="bg-white text-reelred hover:bg-gray-100 font-semibold py-3 px-6 rounded-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg group inline-flex items-center"
                 >
                   Fill Out Form
                   <ChevronDown className="ml-2 h-5 w-5 animate-bounce" />
-                </Link>
+                </button>
                 <a
                   href="tel:+91 9505613553"
                   className="bg-white/10 hover:bg-white/20 transition-all text-white font-semibold py-3 px-6 rounded-md inline-flex items-center hover:shadow-lg transform hover:-translate-y-1"

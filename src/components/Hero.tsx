@@ -178,8 +178,18 @@ const Hero = () => {
               hoverEffect={true}
             >
               <Link
-                to="/contact"
+                to="/contact#contact-form"
                 className="button-primary text-lg px-8 py-4"
+                onClick={(e) => {
+                  // If already on contact page, scroll to form
+                  if (window.location.pathname === '/contact') {
+                    e.preventDefault();
+                    const formSection = document.getElementById('contact-form');
+                    if (formSection) {
+                      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }
+                }}
               >
                 Book ReelFace <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
