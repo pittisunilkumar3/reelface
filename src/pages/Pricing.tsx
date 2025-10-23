@@ -156,12 +156,27 @@ const Pricing = () => {
       annualPrice: 69990, // One-time payment
       isOneTime: true,
       features: [
-        "1 professional brand Ad shoot",
-        "collab accepted (Optional)",
-        "Script, shooting, and editing support",
-        "Brand-aligned wardrobe & styling",
-        "Strategy call to refine your message",
-        "Branding promotion"
+        "Brand & Founder Shoots",
+        "Personal Branding Shoots",
+        "Food, Café & Restaurant Shoots",
+        "Corporate & Business Shoots",
+        "Event & Launch Shoots",
+        "Social Media Content Shoots",
+        "Influencer & Celebrity Shoots",
+        "Startup & Pitch Shoots",
+        "Education & EdTech Shoots",
+        "Fitness & Wellness Shoots",
+        "Beauty & Fashion Shoots",
+        "Tech & SaaS Shoots",
+        "Real Estate & Hospitality Shoots",
+        "Travel & Experience Shoots",
+        "NGO & Social Impact Shoots",
+        "Institutional & University Shoots",
+        "Testimonial & Review Shoots",
+        "Campaign & Ad Shoots",
+        "Podcast & Talk Show Shoots",
+        "Award & PR Shoots",
+        "Creative Concept Shoots"
       ],
 
       cta: "Book now",
