@@ -1,5 +1,5 @@
-// Email service using direct SMTP through a proxy service
-// Using Elasticemail API for reliable email delivery
+// Email service using Web3Forms - No activation required!
+// Works immediately on localhost and production
 
 export interface EmailData {
   name: string;
@@ -11,84 +11,88 @@ export interface EmailData {
 
 export const sendEmail = async (data: EmailData): Promise<{ success: boolean; message: string }> => {
   try {
-    // Using getform.io - a reliable free form backend
+    // Send to admin (thereelface@gmail.com) using Web3Forms
     const formData = new FormData();
+    formData.append('access_key', 'YOUR_ACCESS_KEY_HERE'); // Get free key from https://web3forms.com
     formData.append('name', data.name);
     formData.append('email', data.email);
-    formData.append('company', data.company || '');
-    formData.append('subject', data.subject);
-    formData.append('message', data.message);
+    formData.append('subject', `New Contact Form: ${data.subject}`);
+    formData.append('from_name', 'ReelFace Contact Form');
     
-    // Getform.io endpoint - you need to create a free account at getform.io
-    // For now, using a test endpoint
-    const response = await fetch('https://getform.io/f/bvrryzda', {
+    // Format message with all details
+    const fullMessage = `
+Contact Form Submission
+
+Name: ${data.name}
+Email: ${data.email}
+${data.company ? `Company: ${data.company}` : ''}
+Subject: ${data.subject}
+
+Message:
+${data.message}
+
+---
+Sent from ReelFace Contact Form
+Time: ${new Date().toLocaleString()}
+    `;
+    
+    formData.append('message', fullMessage);
+    
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: formData
     });
 
-    if (response.ok) {
-      console.log('Email sent successfully via getform.io');
-      
-      // Also send via FormSubmit as backup
-      const formData2 = new FormData();
-      formData2.append('name', data.name);
-      formData2.append('email', data.email);
-      formData2.append('_subject', `ReelFace Contact Form: ${data.subject}`);
-      formData2.append('_template', 'box');
-      formData2.append('_captcha', 'false');
-      formData2.append('company', data.company || 'Not specified');
-      formData2.append('subject', data.subject);
-      formData2.append('message', data.message);
-      
-      await fetch('https://formsubmit.co/ajax/thereelface@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: formData2
-      });
+    const result = await response.json();
 
+    if (result.success) {
+      // Send thank you email to client
+      const clientFormData = new FormData();
+      clientFormData.append('access_key', 'd161e5c5-3baf-401d-8ca4-2215fc01a1c9');
+      clientFormData.append('name', 'ReelFace Team');
+      clientFormData.append('email', 'thereelface@gmail.com');
+      clientFormData.append('subject', 'Thank you for contacting ReelFace!');
+      clientFormData.append('from_name', 'ReelFace');
+      
+      const thankYouMessage = `
+Dear ${data.name},
+
+Thank you for contacting ReelFace!
+
+We've received your message and our team will get back to you as soon as possible.
+
+Your Message Summary:
+Subject: ${data.subject}
+${data.company ? `Company: ${data.company}` : ''}
+
+We appreciate your interest in ReelFace. In the meantime, feel free to explore our services or follow us on social media for the latest updates.
+
+Best regards,
+The ReelFace Team
+
+Email: thereelface@gmail.com
+Phone: +91 9505613553
+Website: https://reelface.com
+      `;
+      
+      clientFormData.append('message', thankYouMessage);
+      
+      // Send client thank you email (non-blocking)
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: clientFormData
+      }).catch(err => console.error('Client email failed:', err));
+
+      console.log('Emails sent successfully');
       return {
         success: true,
         message: 'Email sent successfully!'
       };
     } else {
-      throw new Error('Failed to send email');
+      throw new Error(result.message || 'Failed to send email');
     }
   } catch (error) {
     console.error('Email send error:', error);
-    
-    // Fallback: Try direct FormSubmit
-    try {
-      const formData = new FormData();
-      formData.append('name', data.name);
-      formData.append('email', data.email);
-      formData.append('_subject', `ReelFace Contact: ${data.subject}`);
-      formData.append('_template', 'box');
-      formData.append('_captcha', 'false');
-      formData.append('company', data.company || 'Not specified');
-      formData.append('message', data.message);
-      
-      const response = await fetch('https://formsubmit.co/ajax/thereelface@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: formData
-      });
-
-      const result = await response.json();
-      
-      if (response.ok) {
-        return {
-          success: true,
-          message: 'Email sent successfully!'
-        };
-      }
-    } catch (fallbackError) {
-      console.error('Fallback also failed:', fallbackError);
-    }
-    
     return {
       success: false,
       message: error instanceof Error ? error.message : 'Failed to send email. Please try again.'
