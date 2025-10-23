@@ -231,7 +231,7 @@ const Index = () => {
       
       <SEO
         title="ReelFace - Book crowd faces"
-        description="ReelFace specializes in cutting-edge AI development, creating intelligent solutions that transform how businesses operate while ensuring digital wellness and security."
+        description="Where real people create real impact through Crowd Face Marketing."
       />
       <Hero />
 
