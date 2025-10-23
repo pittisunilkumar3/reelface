@@ -170,41 +170,6 @@ const Pricing = () => {
     }
   ];
 
-  // Additional service plans
-  const additionalPlans = [
-    {
-      name: "Face edits",
-      description: "Short-form video editing only",
-      monthlyPrice: 699,
-      annualPrice: 9990, // One-time payment
-      isOneTime: true,
-      features: [
-        "📱 Short-form video editing only",
-        "👥 For brands, individuals & professionals",
-        "⭐ Engaging, high-quality edits"
-      ],
-      cta: "Book now",
-      color: "from-blue-500/70 to-blue-300/20"
-    },
-    {
-      name: "Video Production",
-      description: "Professional video production services",
-      monthlyPrice: 1999,
-      annualPrice: 49990, // Starting price
-      isStarting: true,
-      features: [
-        "📹 Everyday Moments",
-        "🎉 Event Highlights",
-        "📖 Brand Story Shoot",
-        "💒 Wedding Memories"
-      ],
-      cta: "Contact us",
-      color: "from-gray-500/70 to-gray-300/20"
-    }
-  ];
-
-
-
   return (
     <div className="min-h-screen">
       <SEO
@@ -431,58 +396,6 @@ const Pricing = () => {
                 </div>
               </div>
             </FloatingElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Services */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Additional Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Specialized services to complement your content creation needs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
-            {additionalPlans.map((plan, index) => (
-              <div
-                key={index}
-                className="relative bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl w-full max-w-sm"
-              >
-                <div className={`bg-gradient-to-br ${plan.color} p-6 text-white`}>
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="opacity-90 mb-4">{plan.description}</p>
-                  <div className="flex items-baseline">
-                    <span className="text-4xl font-bold">₹{plan.monthlyPrice.toLocaleString()}</span>
-                    
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="mb-6">
-                    <h4 className="font-medium text-gray-900 mb-4">What's included:</h4>
-                    <ul className="space-y-3">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <Check className="h-5 w-5 text-reelred mr-3 shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    to={plan.cta === "Contact us" ? "/contact" : "/contact"}
-                    className="w-full button-primary justify-center"
-                  >
-                    {plan.cta}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

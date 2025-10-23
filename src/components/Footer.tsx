@@ -2,7 +2,6 @@
 import { NavLink } from 'react-router-dom';
 import {
   Linkedin,
-  Twitter,
   Facebook,
   Mail,
   Phone,
@@ -36,15 +35,6 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://x.com/thereelface?s=21"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/10 p-2 rounded-full hover:bg-gradient-to-r hover:from-reelred-500/80 hover:to-reelblack-800/80 transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
               <a
                 href="https://www.facebook.com/share/1Z1fbt9yPf/?mibextid=wwXIfr"
