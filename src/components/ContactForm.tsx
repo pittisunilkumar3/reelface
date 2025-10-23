@@ -17,6 +17,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { sendEmail } from '@/utils/emailService';
 
 // Define form validation schema
 const formSchema = z.object({
@@ -48,19 +49,18 @@ const ContactForm = () => {
     setFormError(null);
 
     try {
-      // Simulate API call with potential failure
-      const random = Math.random();
-
-      // Simulate form submission with 90% success rate
-      await new Promise<void>((resolve, reject) => {
-        setTimeout(() => {
-          if (random < 0.9) {
-            resolve();
-          } else {
-            reject(new Error('Network error occurred. Please try again.'));
-          }
-        }, 1500);
+      // Send email using the email service
+      const result = await sendEmail({
+        name: values.name,
+        email: values.email,
+        company: values.company,
+        subject: values.subject,
+        message: values.message,
       });
+
+      if (!result.success) {
+        throw new Error(result.message);
+      }
 
       // Success case
       setIsSubmitted(true);
