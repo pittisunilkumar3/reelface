@@ -224,9 +224,7 @@ const ServicesPage = () => {
                 If you have <strong>500–10K followers</strong>, you already have influence — and we'll help you turn it into opportunity.
               </p>
               <p>
-                In this program, you'll help brands grow by posting their videos on your social media.
-                You don't need to shoot or edit anything — brands will send you ready-to-post content, and you'll simply share it with your audience.
-              </p>
+               In this program, you'll help brands grow by posting their videos on your social media. Sometimes, you'll also shoot onsite videos yourself based on brand guidelines</p>
               <p>
                 Every post builds your credibility as a creator while helping brands reach new people through authentic, real profiles.
               </p>
