@@ -31,44 +31,44 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "What makes ReelFace different from other video production companies?",
-      answer: "ReelFace makes your brand stand out on reels — either I become your brand's face, or you do, and we handle the rest. ReelFace ensures your brand connects with the right audience in the most engaging way."
+      question: "What is Crowd Face Marketing?",
+      answer: "Crowd Face Marketing is a unique promotional model where real people — customers, creators, and the public — visit your business location, capture content, and share it on their social media. This boosts brand visibility, builds trust, and drives more footfall."
     },
     {
-      question: "How does the 'Brand Face' service work?",
-      answer: "We assign a dedicated professional talent who becomes the exclusive face of your brand. They learn your brand voice, values, and messaging to create authentic content. This person appears consistently in your reels, building familiarity and trust with your audience while maintaining professional quality."
+      question: "How does Reelface help my business grow?",
+      answer: "We create and promote engaging content that brings attention to your brand. Real faces + real experiences = higher trust and organic reach. We also handle full video production services to showcase your brand professionally."
     },
     {
-      question: "What platforms do you create content for?",
-      answer: "Startups and small businesses, cafés, salons, gyms, wellness brands, fashion, beauty, lifestyle, F&B, gadget brands, as well as founders and professionals looking to grow their personal brand and business."
+      question: "Do we need to create content ourselves?",
+      answer: "No! Our Team comes to your location and creates content. We can also produce professional brand videos if you want high-quality reels, ads, and stories."
     },
     {
-      question: "What's included in your video production packages?",
-      answer: "Our packages typically include script development, professional filming with high-end equipment, post-production editing, color grading, sound design, and multi-format optimization. We also provide content strategy consultation and performance tracking recommendations."
+      question: "Which industries can use Crowd Face Marketing?",
+      answer: "Any brand that wants visibility — especially cafés, restaurants, retail stores, gyms, clinics, salons, co-working spaces, and local businesses ready to attract more customers."
     },
     {
-      question: "How long does it take to produce content?",
-      answer: "Timeline varies by project scope. Simple reels can be delivered within 3-5 business days, while comprehensive campaigns with multiple videos may take 1-2 weeks. We offer rush delivery options for urgent projects and maintain clear communication throughout the process."
+      question: "How do the onsite shoots work?",
+      answer: "Our crowd visits your brand, explores your product/service, captures content, and posts from their profiles. You get genuine customer reviews and online reach."
     },
     {
-      question: "Do you provide content strategy and planning?",
-      answer: "Absolutely! We offer comprehensive content strategy services including audience research, content calendar planning, script writing, and performance optimization. Our team helps align your content with your business goals and target audience preferences."
+      question: "What locations do you serve?",
+      answer: "We are based in Banjara Hills, Hyderabad, and operate across South india."
     },
     {
-      question: "Can you work with our existing brand guidelines?",
-      answer: "Yes, we work closely with your existing brand guidelines, visual identity, and messaging framework. Our team ensures all content maintains brand consistency while optimizing for engagement and platform-specific requirements."
+      question: "What if I need only video production services?",
+      answer: "No problem! We offer individual services like reel shoots, ad filmmaking, editing, and content strategy even without crowd promotion."
     },
     {
-      question: "What are your pricing options?",
-      answer: "We offer flexible pricing based on project scope, content volume, and service requirements. Options include per-project pricing, monthly retainers, and custom packages. Contact us for a personalized quote based on your specific needs and budget."
+      question: "How do I get started?",
+      answer: "Just contact our team and share your brand goals. We'll plan the best mix of crowd promotion + content creation to grow your business."
     },
     {
-      question: "Do you offer revisions and feedback incorporation?",
-      answer: "Yes, we include revision rounds in all our packages. We work collaboratively with clients to ensure the final content meets expectations and aligns with brand goals. Our process includes review checkpoints and feedback incorporation."
+      question: "Can I choose the type of crowd or creators?",
+      answer: "Yes. Based on your target audience, we select relevant faces or micro-influencers who match your brand vibe."
     },
     {
-      question: "Can you help with personal branding for executives and professionals?",
-      answer: "Definitely! We specialize in personal branding for professionals, executives, and thought leaders. This includes professional headshots, LinkedIn optimization, thought leadership content creation, and building a consistent online presence that enhances professional reputation."
+      question: "How soon can I see results?",
+      answer: "You'll start gaining visibility and engagement from the very first campaign."
     }
   ];
 
