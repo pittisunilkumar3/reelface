@@ -151,7 +151,7 @@ const Pricing = () => {
     },
     {
       name: "Face Lens",
-      description: "Your Brand. Your Story. Our Face to the World.",
+      description: "Your Story, Perfectly Captured — Professional Video Production Packages for Every Brand.",
       monthlyPrice: 9999,
       annualPrice: 69990, // One-time payment
       isOneTime: true,
