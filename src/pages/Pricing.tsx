@@ -151,10 +151,10 @@ const Pricing = () => {
     },
     {
       name: "Face Lens",
-      description: "Your Story, Perfectly Captured — Professional Video Production Packages for Every Brand.",
-      monthlyPrice: 9999,
-      annualPrice: 69990, // One-time payment
-      isOneTime: true,
+      description: "Your Story, Perfectly Captured — Professional Video Production Packages for Every Brand.",
+      monthlyPrice: null,
+      annualPrice: null,
+      isContactUs: true,
       features: [
         "Brand & Founder Shoots",
         "Personal Branding Shoots",
@@ -332,7 +332,7 @@ const Pricing = () => {
                       <div className="flex items-baseline mb-2">
                         {plan.isContactUs ? (
                           <span className="text-3xl font-black group-hover:scale-110 transition-transform duration-300">
-                          Book Faces
+                          {plan.name === "Face Lens" ? "Custom Price" : "Book Faces"}
                           </span>
                         ) : (
                           <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">

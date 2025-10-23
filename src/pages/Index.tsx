@@ -162,40 +162,44 @@ const Index = () => {
   // For FAQ section
   const faqs = [
     {
-      question: "What is ReelFace?",
-      answer: "ReelFace is a specialised service where I become the exclusive face of your brand’s reels — creating authentic, engaging video content to grow your reach and awareness."
+      question: "What is Crowd Face Marketing?",
+      answer: "Crowd Face Marketing is a unique promotional model where real people — customers, creators, and the public — visit your business location, capture content, and share it on their social media. This boosts brand visibility, builds trust, and drives more footfall."
     },
     {
-      question: "How is ReelFace different from influencers?",
-      answer: "Most influencers promote dozens of brands at once, which kills exclusivity. ReelFace works with select clients and offers clear packages, so your message stays unique and consistent."
+      question: "How does Reelface help my business grow?",
+      answer: "We create and promote engaging content that brings attention to your brand. Real faces + real experiences = higher trust and organic reach. We also handle full video production services to showcase your brand professionally."
     },
     {
-      question: "Who can use ReelFace?",
-      answer: "Startups and small businesses, cafés, salons, gyms, wellness brands, fashion, beauty, lifestyle, F&B, gadget brands, as well as founders and professionals looking to grow their personal brand and business."
+      question: "Do we need to create content ourselves?",
+      answer: "No! Our Team comes to your location and creates content. We can also produce professional brand videos if you want high-quality reels, ads, and stories."
     },
     {
-      question: "Do you offer exclusivity for my brand?",
-      answer: "Yes. Depending on the plan, we sign an agreement for brand exclusivity within your category (e.g., one café, one salon in a city)."
+      question: "Which industries can use Crowd Face Marketing?",
+      answer: "Any brand that wants visibility — especially cafés, restaurants, retail stores, gyms, clinics, salons, co-working spaces, and local businesses ready to attract more customers."
     },
     {
-      question: "How long does it take to deliver a reel?",
-      answer: "Usually 1–2 working days after receiving your product/brief. (Rush delivery available at extra cost.)"
+      question: "How do the onsite shoots work?",
+      answer: "Our crowd visits your brand, explores your product/service, captures content, and posts from their profiles. You get genuine customer reviews and online reach."
     },
     {
-      question: "Can you post on your Instagram page too?",
-      answer: "Absolutely! Collaboration on my Instagram page is part of every package — boosting your visibility."
+      question: "What locations do you serve?",
+      answer: "We are based in Banjara Hills, Hyderabad, and operate across South india."
     },
     {
-      question: "Do you provide strategy or only videos?",
-      answer: "All plans include basic guidance on scripting, hooks, and posting. Gold and Personal Branding packages come with strategy calls & audience insights."
+      question: "What if I need only video production services?",
+      answer: "No problem! We offer individual services like reel shoots, ad filmmaking, editing, and content strategy even without crowd promotion."
     },
     {
-      question: "What if I need ongoing content every month?",
-      answer: "You can subscribe to a monthly retainer (custom pricing) or upgrade to a bigger package anytime."
+      question: "How do I get started?",
+      answer: "Just contact our team and share your brand goals. We'll plan the best mix of crowd promotion + content creation to grow your business."
     },
     {
-      question: "How do I book your service?",
-      answer: "DM on Instagram, fill out the website form, or WhatsApp me. We’ll set up a discovery call, finalise the package, sign an agreement, and start creating!"
+      question: "Can I choose the type of crowd or creators?",
+      answer: "Yes. Based on your target audience, we select relevant faces or micro-influencers who match your brand vibe."
+    },
+    {
+      question: "How soon can I see results?",
+      answer: "You'll start gaining visibility and engagement from the very first campaign."
     }
   ];
 
