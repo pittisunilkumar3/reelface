@@ -115,7 +115,7 @@ const Pricing = () => {
       color: "from-yellow-500/70 to-yellow-300/20"
     },
 
-    
+
     {
       name: "Face Story",
       description: "Perfect for brands and professionals seeking consistent reel-based content.",
@@ -179,7 +179,7 @@ const Pricing = () => {
         "Creative Concept Shoots"
       ],
 
-      cta: "Book now",
+      cta: "Contact us",
       popular: false,
       color: "from-blue-500/70 to-blue-300/20"
     }
@@ -366,7 +366,7 @@ const Pricing = () => {
 
                     {/* CTA Button */}
                     <Link
-                      to="/contact"
+                      to="/contact#contact-form"
                       className={`w-full group/btn relative overflow-hidden rounded-xl py-3 px-6 font-semibold text-center transition-all duration-300 transform hover:scale-105 ${
                         plan.popular
                           ? 'bg-gradient-to-r from-reelred to-reelblack text-white shadow-lg hover:shadow-xl'
