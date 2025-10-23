@@ -150,7 +150,7 @@ const Pricing = () => {
       color: "from-reelred/70 to-reelred/20"
     },
     {
-      name: "Reelface",
+      name: "Face Lens",
       description: "Your Brand. Your Story. Our Face to the World.",
       monthlyPrice: 9999,
       annualPrice: 69990, // One-time payment
