@@ -230,7 +230,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       
       <SEO
-        title="ReelFace - Advanced Book ReelFace"
+        title="ReelFace - Book crowd faces"
         description="ReelFace specializes in cutting-edge AI development, creating intelligent solutions that transform how businesses operate while ensuring digital wellness and security."
       />
       <Hero />
