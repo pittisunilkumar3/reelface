@@ -80,28 +80,44 @@ const Pricing = () => {
 
   const pricingPlans = [
     {
-      name: "Reelface",
-      description: "Your Brand. Your Story. Our Face to the World.",
-      monthlyPrice: 9999,
-      annualPrice: 69990, // One-time payment
-      isOneTime: true,
+      name: "Crowd Face",
+      description: "Turn your brand into a conversation everyone's having.",
+      monthlyPrice: null,
+      annualPrice: null,
+      isContactUs: true,
       features: [
-        "1 professional brand Ad shoot",
-        "collab accepted (Optional)",
-        "Script, shooting, and editing support",
-        "Brand-aligned wardrobe & styling",
-        "Strategy call to refine your message",
-        "Branding promotion"
+        "Your story. Multiple faces",
+        "One brand",
+        "Personalized Branding",
+        "Content Research",
+        "Content Strategy",
+        "Script Writing",
+        "Video Production",
+        "Video Editing",
+        "Graphic Designing",
+        "Template Creation",
+        "Reel Optimization",
+        "Thumbnail Design",
+        "Voiceovers & Subtitles",
+        "SEO for Content",
+        "Platform Strategy",
+        "Campaign Planning",
+        "Audience Engagement",
+        "Analytics & Reporting",
+        "Trend Monitoring",
+        "Brand Storytelling",
+        "Account Manager",
+        "Dedicated Team"
       ],
 
-      cta: "Book now",
+      cta: "Contact us",
       popular: false,
-      color: "from-blue-500/70 to-blue-300/20"
+      color: "from-yellow-500/70 to-yellow-300/20"
     },
 
     
     {
-      name: "Credit Face",
+      name: "Face Story",
       description: "Perfect for brands and professionals seeking consistent reel-based content.",
       monthlyPrice: 3999,
       annualPrice: 299990, // One-time payment
@@ -134,39 +150,23 @@ const Pricing = () => {
       color: "from-reelred/70 to-reelred/20"
     },
     {
-      name: "Crowd Face",
-      description: "Turn your brand into a conversation everyone's having.",
-      monthlyPrice: null,
-      annualPrice: null,
-      isContactUs: true,
+      name: "Reelface",
+      description: "Your Brand. Your Story. Our Face to the World.",
+      monthlyPrice: 9999,
+      annualPrice: 69990, // One-time payment
+      isOneTime: true,
       features: [
-        "Your face. Multiple accounts",
-        "One brand",
-        "Personalized Branding",
-        "Content Research",
-        "Content Strategy",
-        "Script Writing",
-        "Video Production",
-        "Video Editing",
-        "Graphic Designing",
-        "Template Creation",
-        "Reel Optimization",
-        "Thumbnail Design",
-        "Voiceovers & Subtitles",
-        "SEO for Content",
-        "Platform Strategy",
-        "Campaign Planning",
-        "Audience Engagement",
-        "Analytics & Reporting",
-        "Trend Monitoring",
-        "Brand Storytelling",
-        "Account Manager",
-        "Dedicated Team"
+        "1 professional brand Ad shoot",
+        "collab accepted (Optional)",
+        "Script, shooting, and editing support",
+        "Brand-aligned wardrobe & styling",
+        "Strategy call to refine your message",
+        "Branding promotion"
       ],
 
-      cta: "Contact us",
+      cta: "Book now",
       popular: false,
-      color: "from-yellow-500/70 to-yellow-300/20"
+      color: "from-blue-500/70 to-blue-300/20"
     }
   ];
 
@@ -317,7 +317,7 @@ const Pricing = () => {
                       <div className="flex items-baseline mb-2">
                         {plan.isContactUs ? (
                           <span className="text-3xl font-black group-hover:scale-110 transition-transform duration-300">
-                          Growth Pack
+                          Book Faces
                           </span>
                         ) : (
                           <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
