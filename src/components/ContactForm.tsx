@@ -17,7 +17,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { sendEmail } from '@/utils/emailService';
+import { sendEmail, type EmailData } from '../utils/emailService';
 
 // Define form validation schema
 const formSchema = z.object({
@@ -47,34 +47,45 @@ const ContactForm = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setFormError(null);
+    console.log('🚀 Form submitted with values:', values);
 
     try {
+      console.log('📧 Calling sendEmail function...');
+      
       // Send email using the email service
-      const result = await sendEmail({
+      const emailData: EmailData = {
         name: values.name,
         email: values.email,
-        company: values.company,
+        company: values.company || '',
         subject: values.subject,
         message: values.message,
-      });
+      };
+      
+      console.log('📤 Email data:', emailData);
+      const result = await sendEmail(emailData);
+      console.log('📥 Email service result:', result);
 
       if (!result.success) {
+        console.error('❌ Email send failed:', result.message);
         throw new Error(result.message);
       }
 
       // Success case
+      console.log('✅ Email sent successfully!');
       setIsSubmitted(true);
       form.reset();
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
+        description: "We'll get back to you as soon as possible. Check your email for confirmation.",
       });
     } catch (error) {
       // Error case
-      setFormError(error instanceof Error ? error.message : 'An unexpected error occurred');
+      console.error('❌ Form submission error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+      setFormError(errorMessage);
       toast({
         title: "Error sending message",
-        description: error instanceof Error ? error.message : 'Please try again later',
+        description: errorMessage,
         variant: "destructive",
       });
     }

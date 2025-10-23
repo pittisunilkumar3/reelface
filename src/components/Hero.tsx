@@ -195,6 +195,21 @@ const Hero = () => {
               </Link>
             </FloatingElement>
 
+            <FloatingElement
+              animationType="slide-up"
+              delay={0.5}
+              hoverEffect={true}
+            >
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSffgPVOUdU0g9-Fzo2N16GFUGvLmtNDJ9SlWKlwj5oB4a_y6g/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-secondary text-lg px-8 py-4 inline-flex items-center"
+              >
+                Become a Face Partner <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </FloatingElement>
+
           </div>
 
           {/* Tech icons grid */}

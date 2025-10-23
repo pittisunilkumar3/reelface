@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            background: linear-gradient(to right, #FF1493, #000000);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #f0f0f0;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>ReelFace Email API Test</h1>
+    <p>This page tests the email sending functionality</p>
+    
+    <button onclick="testAdminEmail()">Test Admin Email (thereelface@gmail.com)</button>
+    <button onclick="testClientEmail()">Test Client Email (pittisunilkumar3@gmail.com)</button>
+    <button onclick="testBothEmails()">Test Both Emails</button>
+    
+    <div id="result"></div>
+
+    <script>
+        const apiEndpoint = 'https://ai.alviongs.com/webhook/f90a9911-c08a-499e-b901-d353f382f807';
+
+        async function testAdminEmail() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Sending admin email...</p>';
+            
+            const payload = {
+                sendmail: 'thereelface@gmail.com',
+                subject: 'Test Email - ReelFace Admin',
+                message: `
+                    <div style="font-family: Arial, sans-serif; padding: 20px;">
+                        <h1 style="color: #FF1493;">Test Email to Admin</h1>
+                        <p>This is a test email sent at: ${new Date().toLocaleString()}</p>
+                        <p><strong>From:</strong> Test User</p>
+                        <p><strong>Email:</strong> test@example.com</p>
+                        <p><strong>Message:</strong> This is a test message from the contact form.</p>
+                    </div>
+                `
+            };
+
+            try {
+                console.log('Sending payload:', payload);
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                console.log('Response:', result);
+
+                if (response.ok) {
+                    resultDiv.className = 'success';
+                    resultDiv.innerHTML = `
+                        <h3>✅ Admin Email Sent Successfully!</h3>
+                        <p><strong>Sent to:</strong> thereelface@gmail.com</p>
+                        <p><strong>Status:</strong> ${result[0]?.response}</p>
+                        <p><strong>Message ID:</strong> ${result[0]?.messageId}</p>
+                        <p><strong>Accepted:</strong> ${result[0]?.accepted?.join(', ')}</p>
+                        <p>Check <strong>thereelface@gmail.com</strong> inbox (or spam folder)</p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    `;
+                } else {
+                    throw new Error('Failed to send email');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = `<h3>❌ Error</h3><p>${error.message}</p>`;
+            }
+        }
+
+        async function testClientEmail() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Sending client confirmation email...</p>';
+            
+            const payload = {
+                sendmail: 'pittisunilkumar3@gmail.com',
+                subject: 'Thank you for contacting ReelFace!',
+                message: `
+                    <div style="font-family: Arial, sans-serif; padding: 20px; background: #f9fafb;">
+                        <div style="background: linear-gradient(to right, #FF1493, #000000); padding: 30px; text-align: center;">
+                            <h1 style="color: white;">Thank You!</h1>
+                        </div>
+                        <div style="background: white; padding: 30px;">
+                            <p>Dear Test User,</p>
+                            <p>Thank you for contacting ReelFace! This is a test confirmation email.</p>
+                            <p><strong>Sent at:</strong> ${new Date().toLocaleString()}</p>
+                            <p>Best regards,<br>The ReelFace Team</p>
+                        </div>
+                    </div>
+                `
+            };
+
+            try {
+                console.log('Sending payload:', payload);
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                console.log('Response:', result);
+
+                if (response.ok) {
+                    resultDiv.className = 'success';
+                    resultDiv.innerHTML = `
+                        <h3>✅ Client Confirmation Email Sent Successfully!</h3>
+                        <p><strong>Sent to:</strong> pittisunilkumar3@gmail.com</p>
+                        <p><strong>Status:</strong> ${result[0]?.response}</p>
+                        <p><strong>Message ID:</strong> ${result[0]?.messageId}</p>
+                        <p><strong>Accepted:</strong> ${result[0]?.accepted?.join(', ')}</p>
+                        <p>Check <strong>pittisunilkumar3@gmail.com</strong> inbox (or spam folder)</p>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    `;
+                } else {
+                    throw new Error('Failed to send email');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = `<h3>❌ Error</h3><p>${error.message}</p>`;
+            }
+        }
+
+        async function testBothEmails() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Sending both emails...</p>';
+            
+            try {
+                // Send admin email
+                const adminPayload = {
+                    sendmail: 'thereelface@gmail.com',
+                    subject: 'New Contact Form Submission - TEST',
+                    message: `
+                        <div style="font-family: Arial, sans-serif; padding: 20px;">
+                            <h1 style="color: #FF1493;">New Contact Form Submission</h1>
+                            <p><strong>Name:</strong> Test User</p>
+                            <p><strong>Email:</strong> pittisunilkumar3@gmail.com</p>
+                            <p><strong>Subject:</strong> Testing Contact Form</p>
+                            <p><strong>Message:</strong> This is a test message to verify the email functionality is working correctly.</p>
+                            <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+                        </div>
+                    `
+                };
+
+                console.log('Sending admin email...');
+                const adminResponse = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(adminPayload)
+                });
+                const adminResult = await adminResponse.json();
+                console.log('Admin response:', adminResult);
+
+                // Send client email
+                const clientPayload = {
+                    sendmail: 'pittisunilkumar3@gmail.com',
+                    subject: 'Thank you for contacting ReelFace!',
+                    message: `
+                        <div style="font-family: Arial, sans-serif; padding: 20px;">
+                            <h1 style="color: #FF1493;">Thank You!</h1>
+                            <p>Dear Test User,</p>
+                            <p>We've received your message and will get back to you soon.</p>
+                            <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+                        </div>
+                    `
+                };
+
+                console.log('Sending client email...');
+                const clientResponse = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(clientPayload)
+                });
+                const clientResult = await clientResponse.json();
+                console.log('Client response:', clientResult);
+
+                resultDiv.className = 'success';
+                resultDiv.innerHTML = `
+                    <h3>✅ Both Emails Sent Successfully!</h3>
+                    <h4>Admin Email:</h4>
+                    <p><strong>To:</strong> thereelface@gmail.com</p>
+                    <p><strong>Status:</strong> ${adminResult[0]?.response}</p>
+                    <pre>${JSON.stringify(adminResult, null, 2)}</pre>
+                    
+                    <h4>Client Email:</h4>
+                    <p><strong>To:</strong> pittisunilkumar3@gmail.com</p>
+                    <p><strong>Status:</strong> ${clientResult[0]?.response}</p>
+                    <pre>${JSON.stringify(clientResult, null, 2)}</pre>
+                    
+                    <h4>📧 Check Email Inboxes:</h4>
+                    <ul>
+                        <li><strong>thereelface@gmail.com</strong> - Check inbox and spam folder</li>
+                        <li><strong>pittisunilkumar3@gmail.com</strong> - Check inbox and spam folder</li>
+                    </ul>
+                `;
+
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = `<h3>❌ Error</h3><p>${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
