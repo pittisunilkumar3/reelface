@@ -397,10 +397,18 @@ const Contact = () => {
 
           <div className="text-center mt-10">
             <p className="text-gray-600 mb-4">Still have questions about our services?</p>
-            <a href="mailto:thereelface@gmail.com" className="button-primary inline-flex items-center">
+            <button
+              onClick={() => {
+                const formSection = document.getElementById('contact-form');
+                if (formSection) {
+                  formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="button-primary inline-flex items-center"
+            >
               Contact Our Team
               <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </button>
           </div>
         </div>
       </section>
