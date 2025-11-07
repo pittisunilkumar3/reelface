@@ -114,47 +114,45 @@ const Pricing = () => {
       popular: false,
       color: "from-yellow-500/70 to-yellow-300/20"
     },
+    // {
+    //   name: "Face Story",
+    //   description: "Perfect for brands and professionals seeking consistent reel-based content.",
+    //   monthlyPrice: 3999,
+    //   annualPrice: 299990, // One-time payment
+    //   isOneTime: true,
+    //   features: [
+    //     "Your face",
+    //     "Personalized Branding",
+    //     "Content Research",
+    //     "Content Strategy",
+    //     "Script Writing",
+    //     "Video Production",
+    //     "Video Editing",
+    //     "Graphic Designing",
+    //     "Template Creation",
+    //     "Reel Optimization",
+    //     "Thumbnail Design",
+    //     "Voiceovers & Subtitles",
+    //     "SEO for Content",
+    //     "Platform Strategy",
+    //     "Campaign Planning",
+    //     "Audience Engagement",
+    //     "Analytics & Reporting",
+    //     "Trend Monitoring",
+    //     "Brand Storytelling",
+    //     "Account Manager"
+    //   ],
 
-
-    {
-      name: "Face Story",
-      description: "Perfect for brands and professionals seeking consistent reel-based content.",
-      monthlyPrice: 3999,
-      annualPrice: 299990, // One-time payment
-      isOneTime: true,
-      features: [
-        "Your face",
-        "Personalized Branding",
-        "Content Research",
-        "Content Strategy",
-        "Script Writing",
-        "Video Production",
-        "Video Editing",
-        "Graphic Designing",
-        "Template Creation",
-        "Reel Optimization",
-        "Thumbnail Design",
-        "Voiceovers & Subtitles",
-        "SEO for Content",
-        "Platform Strategy",
-        "Campaign Planning",
-        "Audience Engagement",
-        "Analytics & Reporting",
-        "Trend Monitoring",
-        "Brand Storytelling",
-        "Account Manager"
-      ],
-
-      cta: "Book now",
-      popular: true,
-      color: "from-reelred/70 to-reelred/20"
-    },
+    //   cta: "Book now",
+    //   popular: true,
+    //   color: "from-reelred/70 to-reelred/20"
+    // },
     {
       name: "Face Lens",
-      description: "Your Story, Perfectly Captured — Professional Video Production Packages for Every Brand.",
-      monthlyPrice: null,
+      description: "Your Story, Perfectly Captured. Instant Reel Production for Every Brand",
+      monthlyPrice: 1699,
       annualPrice: null,
-      isContactUs: true,
+      isContactUs: false,
       features: [
         "Brand & Founder Shoots",
         "Personal Branding Shoots",
@@ -299,24 +297,24 @@ const Pricing = () => {
           </div>
 
           {/* Enhanced Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
+          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
             {pricingPlans.map((plan, index) => (
               <FloatingElement key={index} delay={0.4 + index * 0.1}>
                 <div
                   className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col w-full max-w-sm ${
                     plan.popular ? 'ring-2 ring-reelred scale-105 lg:scale-110' : ''
-                  } border border-white/20`}
+                  } border border-white/20 mx-auto`}
                 >
                   {/* Animated background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {plan.popular && (
+                  {/* {plan.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
                       <div className="bg-gradient-to-r from-reelred to-reelblack text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
                         ⭐ MOST POPULAR
                       </div>
                     </div>
-                  )}
+                  )} */}
 
                   {/* Header with gradient */}
                   <div className={`relative bg-gradient-to-br ${plan.color} p-6 text-white overflow-hidden`}>
@@ -335,9 +333,14 @@ const Pricing = () => {
                           {plan.name === "Face Lens" ? "Custom Price" : "Book Faces"}
                           </span>
                         ) : (
-                          <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
-                            ₹{plan.monthlyPrice.toLocaleString()}
-                          </span>
+                          <>
+                            <span className="text-4xl font-black group-hover:scale-110 transition-transform duration-300">
+                              ₹{plan.monthlyPrice.toLocaleString()}
+                            </span>
+                            {plan.name === "Face Lens" && (
+                              <span className="text-sm opacity-80 ml-2">/shoot</span>
+                            )}
+                          </>
                         )}
                       </div>
                       {plan.isOneTime && (
